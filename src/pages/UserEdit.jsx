@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { cloudinaryService } from '../services/cloudinaryService'
 import { useNavigate } from 'react-router-dom'
+import { NavBar } from '../cmps/NavBar'
 
 export const UserEdit = () => {
 
@@ -32,25 +33,28 @@ export const UserEdit = () => {
     }
 
     return (
-        <div>
-            <div>Change Info</div>
-            <div>Changes will be reflected to every services</div>
-            <form onSubmit={onUpdateUser}>
-                <img src={img.imgUrl} alt="userImg" />
-                <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
-                <label htmlFor="imgUpload">{uploadMsg()}</label>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name..." />
-                <label htmlFor="bio">Bio</label>
-                <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio..."></textarea>
-                <label htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="Enter your phone..." />
-                <label htmlFor="email"></label>
-                <input type="email" id="email" placeholder="Enter your email..." />
-                <label htmlFor="pass"></label>
-                <input type="password" id="pass" placeholder="Enter your new password..." />
-                <button>Save</button>
-            </form>
-        </div>
+        <React.Fragment>
+            <NavBar />
+            <div>
+                <div>Change Info</div>
+                <div>Changes will be reflected to every services</div>
+                <form onSubmit={onUpdateUser}>
+                    <img src={img.imgUrl} alt="userImg" />
+                    <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
+                    <label htmlFor="imgUpload">{uploadMsg()}</label>
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name..." />
+                    <label htmlFor="bio">Bio</label>
+                    <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio..."></textarea>
+                    <label htmlFor="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone..." />
+                    <label htmlFor="email"></label>
+                    <input type="email" id="email" placeholder="Enter your email..." />
+                    <label htmlFor="pass"></label>
+                    <input type="password" id="pass" placeholder="Enter your new password..." />
+                    <button>Save</button>
+                </form>
+            </div>
+        </React.Fragment>
     )
 }

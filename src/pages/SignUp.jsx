@@ -17,7 +17,7 @@ export const SignUp = () => {
     </div>
 
     return (
-        <div>
+        <div className="auth-container">
             <AuthFormCmp title="Join us!" btnTxt="Register" func={onSignUp} bottomLine={bottomLine} />
         </div>
     )

@@ -4,6 +4,7 @@ import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import { UserEdit } from './pages/UserEdit';
 import { UserInfo } from './pages/UserInfo';
+import './assets/styles/main.scss'
 
 export const App = () => {
 

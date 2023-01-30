@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { NavBar } from '../cmps/NavBar'
 
 export const UserInfo = () => {
 
@@ -15,44 +16,47 @@ export const UserInfo = () => {
     const { name, bio, phone, imgUrl, email, password } = testUser
 
     return (
-        <div>
+        <React.Fragment>
+            <NavBar />
             <div>
-                <div>Personal info</div>
-                <div>Basic info, like your name and photo</div>
-            </div>
-            <div>
+                <div>
+                    <div>Personal info</div>
+                    <div>Basic info, like your name and photo</div>
+                </div>
                 <div>
                     <div>
-                        <div>Profile</div>
-                        <div>Some info may be visible to other people</div>
+                        <div>
+                            <div>Profile</div>
+                            <div>Some info may be visible to other people</div>
+                        </div>
+                        <Link to="/user/1/edit">Edit</Link>
                     </div>
-                    <Link to="/user/1/edit">Edit</Link>
-                </div>
-                <div>
-                    <div>PHOTO</div>
-                    <img src={imgUrl} alt="userImg" />
-                </div>
-                <div>
-                    <div>NAME</div>
-                    <div>{name}</div>
-                </div>
-                <div>
-                    <div>BIO</div>
-                    <div>{bio}</div>
-                </div>
-                <div>
-                    <div>PHONE</div>
-                    <div>{phone}</div>
-                </div>
-                <div>
-                    <div>EMAIL</div>
-                    <div>{email}</div>
-                </div>
-                <div>
-                    <div>PASSWORD</div>
-                    <div>{password}</div>
+                    <div>
+                        <div>PHOTO</div>
+                        <img src={imgUrl} alt="userImg" />
+                    </div>
+                    <div>
+                        <div>NAME</div>
+                        <div>{name}</div>
+                    </div>
+                    <div>
+                        <div>BIO</div>
+                        <div>{bio}</div>
+                    </div>
+                    <div>
+                        <div>PHONE</div>
+                        <div>{phone}</div>
+                    </div>
+                    <div>
+                        <div>EMAIL</div>
+                        <div>{email}</div>
+                    </div>
+                    <div>
+                        <div>PASSWORD</div>
+                        <div>{password}</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
