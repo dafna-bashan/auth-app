@@ -7,7 +7,7 @@ export const UserInfo = () => {
 
     const testUser = {
         name: 'Xanthe Neal',
-        bio: 'I am a software developer and a big fan of devchallenges...',
+        bio: 'I am a software developer and a big fan of devchallenges',
         phone: '908249274292',
         imgUrl: userImg,
         email: 'xanthe.neal@gmail.com',
@@ -27,7 +27,7 @@ export const UserInfo = () => {
                 <div className="frame">
                     <div className="profile-container flex align-center">
                         <div className="full">
-                            <div className="profile" style={{ paddingLeft: 0 }}>Profile</div>
+                            <div className="profile" style={{ marginLeft: 0 }}>Profile</div>
                             <div className="profile-sub">Some info may be visible to other people</div>
                         </div>
                         <Link to="/user/1/edit" className="edit">Edit</Link>

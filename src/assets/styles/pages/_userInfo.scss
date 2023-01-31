@@ -1,5 +1,7 @@
 .user-info {
 
+    margin-bottom: 30px;
+    
     .frame>*:not(:last-child) {
         border-bottom: 1px solid #D3D3D3;
     }
@@ -22,8 +24,8 @@
         height: 115px;
 
         :first-child {
-            width       : 280px;
-            padding-left: 49px;
+            width      : 280px;
+            margin-left: 49px;
         }
     }
 
@@ -33,12 +35,18 @@
         height     : 73px;
 
         :first-child {
-            width       : 280px;
-            padding-left: 49px;
-            font-family : noto-sans-500;
-            font-size   : 13px;
-            line-height : 18px;
-            color       : #BDBDBD;
+            width      : 280px;
+            margin-left: 49px;
+            font-family: noto-sans-500;
+            font-size  : 13px;
+            line-height: 18px;
+            color      : #BDBDBD;
+        }
+
+        :last-child {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 
@@ -79,4 +87,40 @@
     border       : 1px solid #E0E0E0;
     border-radius: 12px;
     width        : 845px;
+}
+
+
+@media (max-width: $narrow-breakpoint) {
+    .frame {
+        border: none;
+        width : 100vw;
+    }
+
+    .user-info {
+
+        .field {
+            justify-content: space-between;
+
+            :first-child {
+                width      : 100px;
+                margin-left: 23px;
+            }
+
+            :last-child {
+                margin-right: 23px;
+            }
+        }
+
+        .profile-container {
+            :first-child {
+                width      : auto;
+                margin-left: 23px;
+            }
+
+            :last-child {
+                margin-right: 23px;
+            }
+        }
+    }
+
 }
