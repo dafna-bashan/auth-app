@@ -13,11 +13,23 @@
 @import 'basics/animation';
 
 // Pages
-@import 'cmps/signUp';
-@import 'cmps/login';
-@import 'cmps/authFormCmp';
+@import 'pages/signUp';
+@import 'pages/login';
+@import 'pages/userInfo';
+@import 'pages/userEdit';
+
 
 // Components
+@import 'cmps/authFormCmp';
 
 
 
+
+main {
+    display          : flex;
+    flex-direction: column;
+    align-items      : center;
+    justify-content  : center;
+    height           : 100vh;
+    width            : 100vw;
+}

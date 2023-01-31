@@ -1,0 +1,80 @@
+.user-info {
+
+    .frame {
+        border          : 1px solid #E0E0E0;
+        border-radius   : 12px;
+        width           : 845px;
+        // padding-top  : 28px;
+
+        >*:not(:last-child) {
+            border-bottom: 1px solid #D3D3D3;
+        }
+    }
+
+    .title {
+        font-size    : 36px;
+        line-height  : 49px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-family  : noto-sans-300;
+        font-size    : 18px;
+        line-height  : 25px;
+        margin-bottom: 44px;
+    }
+
+    .profile-container {
+        height: 115px;
+
+        :first-child {
+            width       : 280px;
+            padding-left: 49px;
+        }
+    }
+
+    .field {
+        display    : flex;
+        align-items: center;
+        height     : 73px;
+
+        :first-child {
+            width       : 280px;
+            padding-left: 49px;
+            font-family : noto-sans-500;
+            font-size   : 13px;
+            line-height : 18px;
+            color       : #BDBDBD;
+        }
+    }
+
+    .profile {
+        font-size  : 24px;
+        line-height: 33px;
+    }
+
+    .profile-sub {
+        font-family: noto-sans-500;
+        font-size  : 13px;
+        line-height: 18px;
+        color      : #828282;
+    }
+
+    .edit {
+        font-family  : noto-sans-500;
+        border       : 1px solid #828282;
+        border-radius: 12px;
+        padding      : 6px 34px;
+        margin-right : 49px;
+    }
+
+    img {
+        width : 72px;
+        height: 72px;
+        margin: 15px 0;
+    }
+
+    .img-con {
+        height: 100px;
+    }
+}

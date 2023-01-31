@@ -1,37 +1,66 @@
 // Font Sizes
-.fs12 { font-size: rem(12px); }
-.fs14 { font-size: rem(14px); }
-.fs18 { font-size: rem(18px); }
-.fs20 { font-size: rem(20px); }
-.fs24 { font-size: rem(24px); }
-.fs28 { font-size: rem(28px); }
-.fs30 { font-size: rem(30px); }
+.fs12 {
+    font-size: rem(12px);
+}
 
-html{
+.fs14 {
+    font-size: rem(14px);
+}
+
+.fs18 {
+    font-size: rem(18px);
+}
+
+.fs20 {
+    font-size: rem(20px);
+}
+
+.fs24 {
+    font-size: rem(24px);
+}
+
+.fs28 {
+    font-size: rem(28px);
+}
+
+.fs30 {
+    font-size: rem(30px);
+}
+
+html {
     color: rgb(41, 41, 41);
 }
+
+.center {
+    text-align: center;
+}
+
 // flex helpers
 
 .flex {
 
     display: flex;
 
-    > *.full {
+    >*.full {
         flex: 1;
     }
+
     &.column {
         flex-direction: column;
     }
+
     &.justify-center {
         justify-content: center;
     }
+
     &.align-center {
         align-items: center;
     }
+
     &.space-between {
         justify-content: space-between;
     }
-    
+
     &.space-around {
         justify-content: space-around;
     }
@@ -41,8 +70,8 @@ html{
 
 .clean-list {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin         : 0;
+    padding        : 0;
 }
 
 // Media helpers
@@ -50,9 +79,11 @@ html{
 .square-ratio {
     @include aspect-ratio(1, 1);
 }
+
 .video-ratio {
     @include aspect-ratio(16, 9);
 }
+
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
@@ -60,36 +91,38 @@ html{
 // Display helpers 
 
 .container {
-    width: 1100px;
+    width : 1100px;
     margin: 0 auto;
 }
 
 //font awsome
 
 i {
-    cursor: pointer;
+    cursor     : pointer;
     font-family: inherit;
 }
+
 .fas {
     font-family: fa-solid;
 }
+
 .fa {
     font-family: fa;
 }
 
-.relative{
+.relative {
     position: relative;
 }
 
-.absolute{
+.absolute {
     position: absolute;
 }
 
-.sticky{
+.sticky {
     position: sticky;
 }
 
-.fixed{
+.fixed {
     position: fixed;
 }
 
@@ -100,8 +133,4 @@ i {
 
 }
 
-@media (max-width: $normal-breakpoint) {
-
-
- 
-}
+@media (max-width: $normal-breakpoint) {}
