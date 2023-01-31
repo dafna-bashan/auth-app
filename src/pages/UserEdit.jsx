@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { cloudinaryService } from '../services/cloudinaryService'
 import { useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
+import userImg from '../assets/img/user-img.png'
+import { Link } from 'react-router-dom'
 
 export const UserEdit = () => {
 
     const [img, setImg] = useState({
-        imgUrl: null,
+        imgUrl: userImg,
         height: '40px',
         width: '100%',
         isUploading: false
@@ -22,8 +24,8 @@ export const UserEdit = () => {
 
     const uploadMsg = () => {
         const { imgUrl, isUploading } = img
-        if (imgUrl) return 'UPLOADED'
-        return isUploading ? 'UPLOADING...' : 'CHANGE PHOTO'
+        if (imgUrl) return 'CHANGE PHOTO'
+        return isUploading ? 'UPLOADING...' : 'ADD PHOTO'
     }
 
     const onUpdateUser = (ev) => {
@@ -35,22 +37,25 @@ export const UserEdit = () => {
     return (
         <React.Fragment>
             <NavBar />
-            <div>
-                <div>Change Info</div>
-                <div>Changes will be reflected to every services</div>
-                <form onSubmit={onUpdateUser}>
-                    <img src={img.imgUrl} alt="userImg" />
-                    <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
-                    <label htmlFor="imgUpload">{uploadMsg()}</label>
+            <div className="user-edit frame">
+                <div className="back"><Link to="/user/1"><span>&#60;</span> Back</Link></div>
+                <div className="profile">Change Info</div>
+                <div className="profile-sub">Changes will be reflected to every services</div>
+                <form onSubmit={onUpdateUser} className="flex column">
+                    <div className="img-con flex align-center">
+                        <img src={img.imgUrl} alt="userImg" />
+                        <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
+                        <label htmlFor="imgUpload" className="img-label">{uploadMsg()}</label>
+                    </div>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" placeholder="Enter your name..." />
                     <label htmlFor="bio">Bio</label>
                     <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio..."></textarea>
                     <label htmlFor="phone">Phone</label>
                     <input type="tel" id="phone" placeholder="Enter your phone..." />
-                    <label htmlFor="email"></label>
+                    <label htmlFor="email">Email</label>
                     <input type="email" id="email" placeholder="Enter your email..." />
-                    <label htmlFor="pass"></label>
+                    <label htmlFor="pass">Password</label>
                     <input type="password" id="pass" placeholder="Enter your new password..." />
                     <button>Save</button>
                 </form>
