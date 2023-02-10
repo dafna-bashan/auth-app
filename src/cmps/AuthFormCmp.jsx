@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+// import { useForm } from '../hooks/useForm'
 
 export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
 
     // const dispatch = useDispatch()
 
-    const initialValues = { firstName: '', lastName: '', email: '', password: '' }
+    // const [credentials, handleChange] = useForm({
+    //     firstName: '',
+    //     lastName: '',
+    //     email: '',
+    //     password: ''
+    // })
 
+    const [credentials, setCredentials] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    })
+
+
+    // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
     const validate = (values) => {
         console.log("MyForm ~ values", values)
         const errors = {};
-        if (!values.firstName | !values.lastName) {
+        if (!values.firstName) {
             errors.firstName = 'Required';
+        }
+        if (!values.lastName) {
             errors.lastName = 'Required';
         }
         if (!values.email) {
@@ -28,21 +45,18 @@ export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
             errors.password = 'Use at least one number and one capital letter'
         }
 
+        setCredentials(values)
+
         return errors;
     }
 
-    // const onSubmit = (values, { setSubmitting }) => {
-    //     console.log('submittes');
-    //     dispatch(login(values))
-    //     window.location.hash = '/info'
-    // }
 
     return (
         <div className="form-container">
             <div className="main-title">Auth app</div>
             <div className="title">{title}</div>
             <Formik
-                initialValues={initialValues}
+                initialValues={credentials}
                 validate={validate}
                 onSubmit={func}>
                 <Form className="flex column">
