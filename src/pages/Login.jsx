@@ -7,7 +7,7 @@ export const Login = () => {
     const navigate = useNavigate()
 
     const onLogin = (ev) => {
-        ev.preventDefault()
+        // ev.preventDefault()
         console.log('logged in!');
         navigate('/user/1')
     }
@@ -18,7 +18,7 @@ export const Login = () => {
 
     return (
         <div className="auth-container">
-            <AuthFormCmp title="Login" btnTxt="Login" func={onLogin} bottomLine={bottomLine} />
+            <AuthFormCmp type="login" title="Login" btnTxt="Login" func={onLogin} bottomLine={bottomLine} />
         </div>
     )
 }

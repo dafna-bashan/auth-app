@@ -1,17 +1,17 @@
 .auth-container {
-    display          : flex;
-    flex-direction: column;
-    align-items      : center;
-    justify-content  : center;
-    height           : 100vh;
-    width            : 100vw;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    height         : 100vh;
+    width          : 100vw;
 
-    
+
     .form-container {
-        
-        margin       : 0 auto;
-        border       : 1px solid #BDBDBD;
-        border-radius: 24px;
+
+        margin        : 0 auto;
+        border        : 1px solid #BDBDBD;
+        border-radius : 24px;
         display       : flex;
         flex-direction: column;
         padding       : 60px;
@@ -35,13 +35,13 @@
 
         }
 
-        input:first-of-type {
-            margin-bottom: 15px;
-        }
+        // input:first-of-type {
+        //     margin-bottom: 15px;
+        // }
 
-        input:last-of-type {
-            margin-bottom: 22px;
-        }
+        // input:last-of-type {
+        //     margin-bottom: 22px;
+        // }
 
         button {
             font-size    : 16px;
@@ -66,11 +66,26 @@
             }
         }
     }
+
+    .error {
+        font-size    : 14px;
+        padding-left : 10px;
+        color        : red;
+        margin-bottom: 15px;
+    }
+
+    .error-con {
+        height: 40px;
+        width : 350px;
+    }
 }
 
 @media (max-width: $mobile-breakpoint) {
     .auth-container {
-        border: none;
+        .form-container{
+            border: none;
+            padding: 0;
+        }
 
     }
 }

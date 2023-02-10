@@ -7,7 +7,7 @@ export const SignUp = () => {
     const navigate = useNavigate()
 
     const onSignUp = (ev) => {
-        ev.preventDefault()
+        // ev.preventDefault()
         console.log('signed up!');
         navigate('/login')
     }
@@ -18,7 +18,7 @@ export const SignUp = () => {
 
     return (
         <div className="auth-container">
-            <AuthFormCmp title="Join us!" btnTxt="Register" func={onSignUp} bottomLine={bottomLine} />
+            <AuthFormCmp type="signup" title="Join us!" btnTxt="Register" func={onSignUp} bottomLine={bottomLine} />
         </div>
     )
 }
