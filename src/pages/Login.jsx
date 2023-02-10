@@ -18,7 +18,7 @@ export const Login = () => {
 
     return (
         <div className="auth-container">
-            <AuthFormCmp type="login" title="Login" btnTxt="Login" func={onLogin} bottomLine={bottomLine} />
+            <AuthFormCmp type="login" title="Login" btnTxt="Login" onSubmit={onLogin} bottomLine={bottomLine} />
         </div>
     )
 }

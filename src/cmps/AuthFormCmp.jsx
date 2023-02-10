@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 // import { useForm } from '../hooks/useForm'
 
-export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
+export const AuthFormCmp = ({ type, title, btnTxt, onSubmit, bottomLine }) => {
 
     // const dispatch = useDispatch()
 
@@ -25,11 +25,13 @@ export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
     const validate = (values) => {
         console.log("MyForm ~ values", values)
         const errors = {};
-        if (!values.firstName) {
-            errors.firstName = 'Required';
-        }
-        if (!values.lastName) {
-            errors.lastName = 'Required';
+        if (type === 'signup') {
+            if (!values.firstName) {
+                errors.firstName = 'Required';
+            }
+            if (!values.lastName) {
+                errors.lastName = 'Required';
+            }
         }
         if (!values.email) {
             errors.email = 'Required';
@@ -58,7 +60,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
             <Formik
                 initialValues={credentials}
                 validate={validate}
-                onSubmit={func}>
+                onSubmit={onSubmit}>
                 <Form className="flex column">
                     {type === 'signup' &&
                         <React.Fragment>
@@ -80,7 +82,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, func, bottomLine }) => {
                     <div className="error-con">
                         <ErrorMessage name="password" component="div" className="error" />
                     </div>
-                    <button>{btnTxt}</button>
+                    <button type="submit">{btnTxt}</button>
                 </Form>
             </Formik>
             <span>{bottomLine}</span>
