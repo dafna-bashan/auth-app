@@ -1,13 +1,21 @@
 import React from 'react'
 import { AuthFormCmp } from '../cmps/AuthFormCmp'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { signup } from '../store/actions/authActions'
 
 export const SignUp = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    const onSignUp = (ev) => {
-        // ev.preventDefault()
+    const onSignUp = (userCredentials) => {
+        try {
+            dispatch(signup(userCredentials))
+        } catch (err) {
+            console.log('error is signup', err);
+        }
+
         console.log('signed up!');
         navigate('/login')
     }
@@ -18,7 +26,7 @@ export const SignUp = () => {
 
     return (
         <div className="auth-container">
-            <AuthFormCmp type="signup" title="Join us!" btnTxt="Register" onSubmit={onSignUp} bottomLine={bottomLine} />
+            <AuthFormCmp type="signup" title="Join us!" btnTxt="Register" submitFunc={onSignUp} bottomLine={bottomLine} />
         </div>
     )
 }

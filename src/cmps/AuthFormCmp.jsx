@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 // import { useForm } from '../hooks/useForm'
 
-export const AuthFormCmp = ({ type, title, btnTxt, onSubmit, bottomLine }) => {
+export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => {
 
     // const dispatch = useDispatch()
 
@@ -20,6 +20,10 @@ export const AuthFormCmp = ({ type, title, btnTxt, onSubmit, bottomLine }) => {
         password: ''
     })
 
+    const onSubmit = () => {
+        console.log('submitted!');
+        submitFunc(credentials)
+    }
 
     // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
     const validate = (values) => {
