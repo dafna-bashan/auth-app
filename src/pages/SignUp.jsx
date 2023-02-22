@@ -9,11 +9,11 @@ export const SignUp = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const onSignUp = (userCredentials) => {
+    const onSignUp = async (userCredentials) => {
         try {
             dispatch(signup(userCredentials))
         } catch (err) {
-            console.log('error is signup', err);
+            console.log('error in signup', err);
         }
 
         console.log('signed up!');

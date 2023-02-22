@@ -10,14 +10,16 @@ export const authService = {
 
 async function login(userCred) {
     const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
+    const user = users.find(user => user.email === userCred.email && user.password === userCred.password)
     // return _saveLocalUser(user)
 
     // const user = await httpService.post('auth/login', userCred);
     if (user) {
+        console.log('user', user);
         _saveLocalUser(user);
         return user;
     }
+    throw Error('unregistered user')
 }
 
 async function signup(userCred) {
