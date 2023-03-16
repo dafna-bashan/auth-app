@@ -1,14 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import userImg from '../assets/img/user-img.png'
 import { UserManu } from './UserManu'
 
 export const NavBar = () => {
 
   const [isManuOpen, setIsManuOpen] = useState(false)
+  const loggedInUser = useSelector(state => state.userModule.loggedInUser)
+  const navigate = useNavigate()
 
   const closeManu = () => {
     setIsManuOpen(false)
   }
+
+  useEffect(() => {
+    if (!loggedInUser) navigate('/login')
+}, [loggedInUser, navigate])
 
   const testUser = {
     name: 'Xanthe Neal',

@@ -36,7 +36,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
     const validate = (values) => {
 
         onRemoveError()
-        console.log("MyForm ~ values", values)
+        // console.log("MyForm ~ values", values)
 
         const errors = {};
         if (type === 'signup') {
