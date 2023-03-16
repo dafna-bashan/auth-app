@@ -13,9 +13,10 @@ export const UserManu = ({ closeFunc }) => {
 
 
     return (
-        <div onClick={closeFunc}>
+        <div className="user-manu" onClick={closeFunc}>
             <div>My Profile</div>
             <div>Group Chat</div>
+            <div></div>
             <div onClick={onLogout}>Logout</div>
         </div>
     )
