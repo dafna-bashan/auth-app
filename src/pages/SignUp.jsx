@@ -1,24 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AuthFormCmp } from '../cmps/AuthFormCmp'
 import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { signup } from '../store/actions/authActions'
 
 export const SignUp = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const loggedInUser = useSelector(state => state.userModule.loggedInUser)
 
-    const onSignUp = async (userCredentials) => {
-        try {
-            dispatch(signup(userCredentials))
-        } catch (err) {
-            console.log('error in signup', err);
-        }
-
-        console.log('signed up!');
-        navigate('/login')
+    const onSignUp = (userCredentials) => {
+        dispatch(signup(userCredentials))
     }
+
+    useEffect(() => {
+        console.log(loggedInUser)
+        if (loggedInUser) {
+            console.log('signed in!');
+            //if i try to go back it navigates me back to the users page, IS THIS A PROBLEM??
+            navigate('/user/1')
+        }
+    }, [loggedInUser, navigate])
+
 
     const bottomLine = <div>
         Already a member? <Link to="/login">Login</Link>

@@ -1,4 +1,5 @@
 import { storageService } from './asyncStorageService';
+import { userService } from './userService';
 import { utilService } from './utilService';
 
 export const authService = {
@@ -23,6 +24,10 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
+    const users = await userService.getUsers()
+    const isUserExist = users.find(user => user.email === userCred.email)
+    if (isUserExist) throw Error('email already exists')
+
     const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred);
     return _saveLocalUser(user);

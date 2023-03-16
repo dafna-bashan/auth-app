@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import userImg from '../assets/img/user-img.png'
+import { UserManu } from './UserManu'
 
 export const NavBar = () => {
+
+  const [isManuOpen, setIsManuOpen] = useState(false)
+
+  const closeManu = () => {
+    setIsManuOpen(false)
+  }
 
   const testUser = {
     name: 'Xanthe Neal',
@@ -15,8 +22,8 @@ export const NavBar = () => {
   return (
     <div className="nav-bar flex space-between">
       <div>Auth App</div>
-      <div><img src={userImg} alt="" />{testUser.name}</div>
-
+      <div onClick={() => setIsManuOpen(true)}><img src={userImg} alt="" />{testUser.name}</div>
+      {isManuOpen && <UserManu closeFunc={closeManu}/>}
     </div>
   )
 }

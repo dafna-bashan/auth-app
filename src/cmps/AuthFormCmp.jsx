@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useForm } from '../hooks/useForm'
 
 export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => {
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     // const [credentials, handleChange] = useForm({
     //     firstName: '',
@@ -20,6 +21,12 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
         password: ''
     })
 
+    const error = useSelector(state => state.errorModule.error)
+
+    const onRemoveError = () => {
+        dispatch({ type: 'REMOVE_ERROR' })
+    }
+
     const onSubmit = () => {
         console.log('submitted!');
         submitFunc(credentials)
@@ -27,7 +34,10 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
 
     // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
     const validate = (values) => {
+
+        onRemoveError()
         console.log("MyForm ~ values", values)
+
         const errors = {};
         if (type === 'signup') {
             if (!values.firstName) {
@@ -85,6 +95,8 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
                     <Field type="password" name="password" placeholder="Password" />
                     <div className="error-con">
                         <ErrorMessage name="password" component="div" className="error" />
+                        {/* {error && <ErrorModal error={error} />} */}
+                        {error && <div className="error">{error}</div>}
                     </div>
                     <button type="submit">{btnTxt}</button>
                 </Form>
