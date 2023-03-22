@@ -1,16 +1,23 @@
-import React from 'react'
-import { useDispatch} from 'react-redux'
-import { logout } from '../store/actions/authActions'
+import React, { useEffect } from 'react'
+// import { useDispatch, useSelector} from 'react-redux'
+// import { useNavigate } from 'react-router-dom'
+// import { logout } from '../store/actions/authActions'
 
-export const UserManu = ({ closeFunc }) => {
+export const UserManu = ({ closeFunc, onLogout }) => {
 
-    const dispatch = useDispatch()
+    // const navigate = useNavigate()
+    // const dispatch = useDispatch()
+    // const loggedInUser = useSelector(state => state.userModule.loggedInUser)
 
-    const onLogout = () => {
-        console.log('logout')
-        dispatch(logout())
-    }
+    // const onLogout = () => {
+    //     console.log('logout')
+    //     dispatch(logout())
+    // }
 
+    // useEffect(() => {
+    //     if (!loggedInUser) navigate('/login')
+    //   }, [loggedInUser, navigate])
+    
 
     return (
         <div className="user-manu" onClick={closeFunc}>

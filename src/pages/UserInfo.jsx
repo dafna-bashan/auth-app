@@ -1,24 +1,33 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../store/actions/authActions'
 
 export const UserInfo = () => {
 
-    const testUser = {
-        name: 'Xanthe Neal',
-        bio: 'I am a software developer and a big fan of devchallenges',
-        phone: '908249274292',
-        imgUrl: userImg,
-        email: 'xanthe.neal@gmail.com',
-        password: '************'
+    const loggedInUser = useSelector(state => state.userModule.loggedInUser)
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    
+    const onLogout = () => {
+        console.log('logout')
+        dispatch(logout())
     }
+    
+    useEffect(() => {
+        if (!loggedInUser) navigate('/login')
+    }, [loggedInUser, navigate])
+    
+    
+    if (!loggedInUser) return <div></div>
 
-    const { name, bio, phone, imgUrl, email, password } = testUser
-
+    const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
     return (
         <React.Fragment>
-            <NavBar />
+            <NavBar onLogout={onLogout} />
             <div className="user-info">
                 <div className="center">
                     <div className="title">Personal info</div>
@@ -30,7 +39,7 @@ export const UserInfo = () => {
                             <div className="profile" style={{ marginLeft: 0 }}>Profile</div>
                             <div className="profile-sub">Some info may be visible to other people</div>
                         </div>
-                        <Link to="/user/1/edit" className="edit">Edit</Link>
+                        <Link to="/user/edit" className="edit">Edit</Link>
                     </div>
                     <div className="field img-con">
                         <div>PHOTO</div>
@@ -38,7 +47,7 @@ export const UserInfo = () => {
                     </div>
                     <div className="field">
                         <div>NAME</div>
-                        <div>{name}</div>
+                        <div>{firstName} {lastName}</div>
                     </div>
                     <div className="field">
                         <div>BIO</div>
@@ -54,7 +63,7 @@ export const UserInfo = () => {
                     </div>
                     <div className="field">
                         <div>PASSWORD</div>
-                        <div>{password}</div>
+                        <div>********</div>
                     </div>
                 </div>
             </div>

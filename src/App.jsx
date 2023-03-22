@@ -11,8 +11,8 @@ export const App = () => {
   return (
     <main>
       <Routes>
-        <Route path='/user/:userId/edit' element={<UserEdit/>} />
-        <Route path='/user/:userId' element={<UserInfo/>} />
+        <Route path='/user/edit' element={<UserEdit/>} />
+        <Route path='/user' element={<UserInfo/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<SignUp />} />
       </Routes>

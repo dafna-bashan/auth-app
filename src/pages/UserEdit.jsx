@@ -4,8 +4,13 @@ import { useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const UserEdit = () => {
+
+    const loggedInUser = useSelector(state => state.userModule.loggedInUser)
+
+    const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
 
     const [img, setImg] = useState({
         imgUrl: userImg,
