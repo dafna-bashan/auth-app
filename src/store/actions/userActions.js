@@ -27,3 +27,17 @@ export function removeUser(userId) {
   }
 }
 
+export function updateUser(user) {
+  return async dispatch => {
+    try {
+      dispatch({ type: 'LOADING_START' })
+      await userService.update(user)
+      dispatch({ type: 'UPDATE_USER', user })
+    } catch (err) {
+      console.log('UserActions: err in removeUser', err)
+    }
+    finally {
+      dispatch({ type: 'LOADING_DONE' })
+    }
+  }
+}

@@ -1,38 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { cloudinaryService } from '../services/cloudinaryService'
 import { useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateUser } from '../store/actions/userActions'
 
 export const UserEdit = () => {
 
     const loggedInUser = useSelector(state => state.userModule.loggedInUser)
-
+    const users = useSelector(state => state.userModule.users)
+    const isSuccessful = useSelector(state => state.systemModule.isSuccessful)
+    const dispatch = useDispatch()
     const navigate = useNavigate()
-    
+
+    const [user, setUser] = useState(loggedInUser)
+    const { firstName, lastName, bio = '', phone = '', imgUrl = userImg, email } = user
+
     const [img, setImg] = useState({
-        imgUrl: userImg,
+        imgUrl,
         height: '40px',
         width: '100%',
         isUploading: false
     })
-    
-    const [user, setUser] = useState(loggedInUser)
-    const { firstName, lastName, bio, phone, imgUrl = userImg, email } = user
 
     const handleChange = ({ target }) => {
         const { name, value } = target
         setUser({ ...user, [name]: value })
-        console.log(name, value, user)
+        // console.log(name, value, user)
     }
 
-
     const uploadImg = async (ev) => {
-        setImg({ ...img, isUploading: true, height: 500, width: 500 })
+        setImg({ ...img, isUploading: true })
         const { secure_url, height, width } = await cloudinaryService.uploadImg(ev)
         setImg({ isUploading: false, imgUrl: secure_url, height, width })
+        setUser({ ...user, imgUrl: secure_url })
     }
 
     const uploadMsg = () => {
@@ -44,8 +47,14 @@ export const UserEdit = () => {
     const onUpdateUser = (ev) => {
         ev.preventDefault()
         console.log('updated!');
-        navigate('/user')
+        dispatch(updateUser(user))
     }
+
+    useEffect(() => {
+        if (isSuccessful) navigate('/user')
+        // console.log(loggedInUser)
+    }, [isSuccessful, loggedInUser, navigate])
+
 
     return (
         <React.Fragment>
@@ -56,11 +65,13 @@ export const UserEdit = () => {
                 <div className="profile-sub">Changes will be reflected to every services</div>
                 <form onSubmit={onUpdateUser} className="flex column">
                     <div className="img-con flex align-center">
-                        <img src={img.imgUrl} alt="userImg" />
+                        <img src={imgUrl ? imgUrl : img.imgUrl} alt="userImg" />
                         <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
                         <label htmlFor="imgUpload" className="img-label">{uploadMsg()}</label>
                     </div>
-                    <label htmlFor="first-name">Fisrt Name</label>
+                    <label htmlFor="email">Email (unchangeable)</label>
+                    <input type="email" id="email" placeholder="Enter your email..." value={email} readOnly />
+                    <label htmlFor="first-name">First Name</label>
                     <input type="text" id="first-name" name="firstName" placeholder="Enter your first name..." value={firstName} onChange={handleChange} />
                     <label htmlFor="last-name">Last Name</label>
                     <input type="text" id="last-name" name="lastName" placeholder="Enter your last name..." value={lastName} onChange={handleChange} />
@@ -68,10 +79,8 @@ export const UserEdit = () => {
                     <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio..." value={bio} onChange={handleChange}></textarea>
                     <label htmlFor="phone">Phone</label>
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." value={phone} onChange={handleChange} />
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email..." value={email} readOnly />
                     <label htmlFor="pass">Password</label>
-                    <input type="password" id="pass" name="password" placeholder="Enter your new password..." onChange={handleChange} />
+                    <input type="password" id="pass" name="password" placeholder="Enter your new password..." autoComplete="new-password" onChange={handleChange} />
                     <button>Save</button>
                 </form>
             </div>

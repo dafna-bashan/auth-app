@@ -11,17 +11,22 @@ export const UserInfo = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    
+
     const onLogout = () => {
         console.log('logout')
         dispatch(logout())
     }
-    
+
+    useEffect(() => {
+        dispatch({ type: 'RESTART' })
+    }, [])
+
+
     useEffect(() => {
         if (!loggedInUser) navigate('/login')
     }, [loggedInUser, navigate])
-    
-    
+
+
     if (!loggedInUser) return <div></div>
 
     const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
