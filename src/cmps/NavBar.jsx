@@ -27,7 +27,7 @@ export const NavBar = ({onLogout}) => {
   return (
     <div className="nav-bar flex space-between">
       <div>Auth App</div>
-      <div onClick={toggleManu}><img src={userImg} alt="" />{loggedInUser.firstName}</div>
+      <div className="user" onClick={toggleManu}><img src={loggedInUser.imgUrl} alt="" />{loggedInUser.firstName}</div>
 
       {/* <ClickAwayListener onClickAway={()=> setIsManuOpen(false)}>
         <div style={{position: 'absolute'}}> */}
