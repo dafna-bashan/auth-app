@@ -1,0 +1,53 @@
+3/27/2023, 12:36:02 PM - INFO - Server is running on port: 3030 
+3/27/2023, 12:59:49 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:00:43 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:01:11 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:03:05 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:04:01 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:04:14 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:06:41 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:06:57 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:17:00 PM - ERROR - Failed to signup TypeError: Cannot read property 'email' of undefined (sid: vS2i_US37UZ1kRE-P2h5fkt-MhJgPjZT)
+3/27/2023, 1:22:15 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:22:32 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafibas (sid: zRRVd1UCy367Kb9hzQFBdffTpSeCI9D9)
+3/27/2023, 1:22:32 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: zRRVd1UCy367Kb9hzQFBdffTpSeCI9D9)
+3/27/2023, 1:24:14 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:26:30 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:26:36 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: vdT5Nl05j6yIPfYl7GE3H0kJd1T18Mz5)
+3/27/2023, 1:26:36 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: vdT5Nl05j6yIPfYl7GE3H0kJd1T18Mz5)
+3/27/2023, 1:27:54 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:28:24 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:28:27 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: LpEbL0NreptWGNYxXSJL8oITyEbFxtBB)
+3/27/2023, 1:28:27 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: LpEbL0NreptWGNYxXSJL8oITyEbFxtBB)
+3/27/2023, 1:29:06 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:29:13 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: B1u0Y5w1dSc96FvyJHYAhtUf44UV_X6v)
+3/27/2023, 1:29:13 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: B1u0Y5w1dSc96FvyJHYAhtUf44UV_X6v)
+3/27/2023, 1:30:01 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:30:06 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: RapDqCGh-dW-I8nee56HVbfU69GBE1YZ)
+3/27/2023, 1:30:06 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: RapDqCGh-dW-I8nee56HVbfU69GBE1YZ)
+3/27/2023, 1:30:35 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:30:37 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: GvNE3_2WkyxkQjR299ZIpfjhXY2TtswX)
+3/27/2023, 1:30:37 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: GvNE3_2WkyxkQjR299ZIpfjhXY2TtswX)
+3/27/2023, 1:31:31 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:31:34 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: OQ8Pnm4m3wFcsNg9D1v718CwnXPw1IXx)
+3/27/2023, 1:31:34 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: OQ8Pnm4m3wFcsNg9D1v718CwnXPw1IXx)
+3/27/2023, 1:35:28 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:35:33 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: yJpibRxMGSyueYjnt9ex30igCzOXDEz7)
+3/27/2023, 1:35:33 PM - ERROR - Failed to signup ReferenceError: password is not defined (sid: yJpibRxMGSyueYjnt9ex30igCzOXDEz7)
+3/27/2023, 1:36:07 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:36:12 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: 8bFnHam3yqHZtL1RiwGvS7iSvU7iT4rS)
+3/27/2023, 1:36:13 PM - DEBUG - auth.route - new account created: {"email":"dafi@gmail.com","firstName":"dafi","lastName":"bas","password":"Ab123456","bio":"","phone":"","imgUrl":"","_id":"6421719dc0bf1e3ee100b4cb"} (sid: 8bFnHam3yqHZtL1RiwGvS7iSvU7iT4rS)
+3/27/2023, 1:36:13 PM - ERROR - Failed to signup ReferenceError: username is not defined (sid: 8bFnHam3yqHZtL1RiwGvS7iSvU7iT4rS)
+3/27/2023, 1:36:40 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:37:07 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:37:25 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:37:39 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:37:56 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:38:21 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:39:32 PM - INFO - Server is running on port: 3030 
+3/27/2023, 1:40:00 PM - DEBUG - auth.service - signup with email: dafi@gmail.com, fullname: dafi bas (sid: Fvli8tGj_fBoVpyZXH54H0AfUetmXu4q)
+3/27/2023, 1:40:03 PM - DEBUG - auth.route - new account created: {"email":"dafi@gmail.com","firstName":"dafi","lastName":"bas","password":"Ab123456","bio":"","phone":"","imgUrl":"","_id":"64217283ff529a3f2c925866"} (sid: Fvli8tGj_fBoVpyZXH54H0AfUetmXu4q)
+3/27/2023, 1:40:03 PM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: Fvli8tGj_fBoVpyZXH54H0AfUetmXu4q)
+3/27/2023, 1:44:12 PM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: ihn67G1j-cSUmt-6Ho2TEB-rXcpPeTXp)
+3/27/2023, 1:44:39 PM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: ihn67G1j-cSUmt-6Ho2TEB-rXcpPeTXp)
+3/27/2023, 1:47:38 PM - INFO - Server is running on port: 3030 
