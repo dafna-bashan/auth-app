@@ -19,7 +19,7 @@ export const UserInfo = () => {
 
     useEffect(() => {
         dispatch({ type: 'RESTART' })
-    }, [])
+    }, [dispatch])
 
 
     useEffect(() => {

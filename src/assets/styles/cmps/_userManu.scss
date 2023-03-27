@@ -18,8 +18,9 @@
 
     div {
         margin: 0 10px;
-
+        
         &:not(:nth-child(3)) {
+            cursor: pointer;
             padding: 10px;
 
             &:hover {

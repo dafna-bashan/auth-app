@@ -10,7 +10,6 @@ import { updateUser } from '../store/actions/userActions'
 export const UserEdit = () => {
 
     const loggedInUser = useSelector(state => state.userModule.loggedInUser)
-    const users = useSelector(state => state.userModule.users)
     const isSuccessful = useSelector(state => state.systemModule.isSuccessful)
     const dispatch = useDispatch()
     const navigate = useNavigate()
