@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import userImg from '../assets/img/user-img.png'
 import { UserManu } from './UserManu'
 
-export const NavBar = ({onLogout}) => {
+export const NavBar = ({ onLogout }) => {
 
   const [isManuOpen, setIsManuOpen] = useState(false)
   const loggedInUser = useSelector(state => state.userModule.loggedInUser)
@@ -27,12 +27,12 @@ export const NavBar = ({onLogout}) => {
   return (
     <div className="nav-bar flex space-between">
       <div>Auth App</div>
-      <div className="user" onClick={toggleManu}><img src={loggedInUser.imgUrl} alt="" />{loggedInUser.firstName}</div>
+      <div className="user" onClick={toggleManu}><img src={loggedInUser.imgUrl ? loggedInUser.imgUrl : userImg} alt="" />{loggedInUser.firstName}</div>
 
       {/* <ClickAwayListener onClickAway={()=> setIsManuOpen(false)}>
         <div style={{position: 'absolute'}}> */}
-          {isManuOpen && <UserManu closeFunc={()=> setIsManuOpen(false)} onLogout={onLogout}/>}
-        {/* </div> */}
+      {isManuOpen && <UserManu closeFunc={() => setIsManuOpen(false)} onLogout={onLogout} />}
+      {/* </div> */}
       {/* </ClickAwayListener> */}
     </div>
   )
