@@ -71,3 +71,22 @@
         margin-right: 14px;
     }
 }
+
+@media (max-width: $narrow-breakpoint) {
+    .user-edit {
+        .back {
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .user-edit {
+        padding: 30px 23px;
+
+        input,
+        textarea {
+            width: 100%;
+        }
+    }
+}

@@ -14,3 +14,9 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: $mobile-breakpoint) {
+    .nav-bar {
+        padding: 23px;
+    }
+}
