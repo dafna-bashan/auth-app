@@ -51,3 +51,32 @@
 3/27/2023, 1:44:12 PM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: ihn67G1j-cSUmt-6Ho2TEB-rXcpPeTXp)
 3/27/2023, 1:44:39 PM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: ihn67G1j-cSUmt-6Ho2TEB-rXcpPeTXp)
 3/27/2023, 1:47:38 PM - INFO - Server is running on port: 3030 
+3/28/2023, 9:42:11 AM - INFO - Server is running on port: 3030 
+3/28/2023, 9:43:27 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:02:46 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:05:22 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:06:24 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:11:53 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:19:29 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:20:19 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:21:56 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:23:50 AM - DEBUG - auth.service - signup with email: dada@gmail.com, fullname: dada bas (sid: a0SnRwrESQOaNT44G2yXsER5pyf3ao86)
+3/28/2023, 10:23:50 AM - DEBUG - auth.route - new account created: {"email":"dada@gmail.com","firstName":"dada","lastName":"bas","password":"Ab123456","bio":"","phone":"","imgUrl":"","_id":"642296068e3a32447867bc3f"} (sid: a0SnRwrESQOaNT44G2yXsER5pyf3ao86)
+3/28/2023, 10:23:50 AM - DEBUG - auth.service - login with email: dada@gmail.com (sid: a0SnRwrESQOaNT44G2yXsER5pyf3ao86)
+3/28/2023, 10:24:49 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:25:26 AM - ERROR - Failed to update user | ReferenceError: logger is not defined (sid: WHh7he8c3cijvLL7RaJ8siZo1DS6YlMp)
+3/28/2023, 10:26:35 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:26:41 AM - ERROR - cannot update user 642296068e3a32447867bc3f | MongoError: Performing an update on the path '_id' would modify the immutable field '_id' (sid: nfTHxGxZQ7JzZiJawHpm4Jwo2XHC8M4Z)
+3/28/2023, 10:26:41 AM - ERROR - Failed to update user | MongoError: Performing an update on the path '_id' would modify the immutable field '_id' (sid: nfTHxGxZQ7JzZiJawHpm4Jwo2XHC8M4Z)
+3/28/2023, 10:27:29 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:29:00 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:30:31 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:32:27 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:33:47 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:34:18 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:35:39 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:35:46 AM - ERROR - cannot update user 642296068e3a32447867bc3f | MongoError: Performing an update on the path '_id' would modify the immutable field '_id' (sid: VAkmOI_bwE3kC4N-5gWU8hjWSG7xGZBO)
+3/28/2023, 10:35:46 AM - ERROR - Failed to update user | MongoError: Performing an update on the path '_id' would modify the immutable field '_id' (sid: VAkmOI_bwE3kC4N-5gWU8hjWSG7xGZBO)
+3/28/2023, 10:36:34 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:37:31 AM - INFO - Server is running on port: 3030 
+3/28/2023, 10:38:57 AM - INFO - Server is running on port: 3030 
