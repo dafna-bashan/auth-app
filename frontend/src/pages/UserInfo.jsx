@@ -48,7 +48,7 @@ export const UserInfo = () => {
                     </div>
                     <div className="field img-con">
                         <div>PHOTO</div>
-                        <img src={imgUrl} alt="userImg" />
+                        <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
                     </div>
                     <div className="field">
                         <div>NAME</div>

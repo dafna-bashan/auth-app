@@ -64,7 +64,7 @@ export const UserEdit = () => {
                 <div className="profile-sub">Changes will be reflected to every services</div>
                 <form onSubmit={onUpdateUser} className="flex column">
                     <div className="img-con flex align-center">
-                        <img src={imgUrl ? imgUrl : img.imgUrl} alt="userImg" />
+                        <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
                         <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
                         <label htmlFor="imgUpload" className="img-label">{uploadMsg()}</label>
                     </div>

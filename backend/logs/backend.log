@@ -80,3 +80,7 @@
 3/28/2023, 10:36:34 AM - INFO - Server is running on port: 3030 
 3/28/2023, 10:37:31 AM - INFO - Server is running on port: 3030 
 3/28/2023, 10:38:57 AM - INFO - Server is running on port: 3030 
+3/28/2023, 11:13:36 AM - DEBUG - auth.service - login with email: dafi@gmail.com (sid: XjXS_TVnAqAPwTP39BEDSY9p2FYTtZMz)
+3/28/2023, 11:18:02 AM - DEBUG - auth.service - signup with email: baba@gmail.com, fullname: baba bobo (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
+3/28/2023, 11:18:02 AM - DEBUG - auth.route - new account created: {"email":"baba@gmail.com","firstName":"baba","lastName":"bobo","password":"123456Ab","bio":"","phone":"","imgUrl":"","_id":"6422a2bace82b5456aa4e193"} (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
+3/28/2023, 11:18:02 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
