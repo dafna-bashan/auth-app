@@ -17,19 +17,23 @@ async function login(email, password) {
     // if (!match) return Promise.reject('Invalid email or password')
 }
 
-async function signup(user) {
-    console.log('auth service', user)
+async function signup(userCred) {
+    console.log('auth service', userCred)
+    const {email, firstName, lastName, password} = userCred
     logger.debug(
-        `auth.service - signup with email: ${user.email}, fullname: ${user.firstName} ${user.lastName}`
+        `auth.service - signup with email: ${email}, fullname: ${firstName} ${lastName}`
     );
-    if (!user.email || !user.password || !user.firstName || !user.lastName){
+    if (!email || !password || !firstName || !lastName){
         return Promise.reject('fullname, email and password are required!');
     }
-       
+    const users = await userService.query()
+    const isUserExist = users.find(user => user.email === email)
+    if (isUserExist) return Promise.reject('email already exists')
+
 
     // const hash = await bcrypt.hash(password, saltRounds)
     // return userService.add({ ...user, password: hash })
-    return userService.add(user);
+    return userService.add(userCred);
 }
 
 module.exports = {

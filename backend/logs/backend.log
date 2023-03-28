@@ -84,3 +84,43 @@
 3/28/2023, 11:18:02 AM - DEBUG - auth.service - signup with email: baba@gmail.com, fullname: baba bobo (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
 3/28/2023, 11:18:02 AM - DEBUG - auth.route - new account created: {"email":"baba@gmail.com","firstName":"baba","lastName":"bobo","password":"123456Ab","bio":"","phone":"","imgUrl":"","_id":"6422a2bace82b5456aa4e193"} (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
 3/28/2023, 11:18:02 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: CcuqTHytSaU83roCMY307PXFdXI-EuaZ)
+3/28/2023, 11:45:27 AM - INFO - Server is running on port: 3030 
+3/28/2023, 11:48:02 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: _wz9eve1TWsllA9K9U3BRsFYk4CSZyRg)
+3/28/2023, 11:48:08 AM - ERROR - Failed to Login Invalid email or password (sid: _wz9eve1TWsllA9K9U3BRsFYk4CSZyRg)
+3/28/2023, 11:50:20 AM - INFO - Server is running on port: 3030 
+3/28/2023, 11:50:31 AM - INFO - Server is running on port: 3030 
+3/28/2023, 11:54:32 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:54:33 AM - ERROR - Failed to Login Invalid email or password (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:55:27 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:55:27 AM - ERROR - Failed to Login Invalid email or password (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:56:07 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:56:07 AM - ERROR - Failed to Login Invalid email or password (sid: WqPvSTMy36Igy4Fnpk7jhzvFC-2tICpg)
+3/28/2023, 11:56:50 AM - INFO - Server is running on port: 3030 
+3/28/2023, 11:57:33 AM - DEBUG - auth.service - login with email: baba@gmail.com (sid: L02elJFdK2jUYm8YCDegTftd6_P6XrQ7)
+3/28/2023, 11:57:34 AM - ERROR - Failed to Login Invalid email or password (sid: L02elJFdK2jUYm8YCDegTftd6_P6XrQ7)
+3/28/2023, 12:00:25 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: L02elJFdK2jUYm8YCDegTftd6_P6XrQ7)
+3/28/2023, 12:00:25 PM - ERROR - Failed to Login Invalid email or password (sid: L02elJFdK2jUYm8YCDegTftd6_P6XrQ7)
+3/28/2023, 12:00:57 PM - INFO - Server is running on port: 3030 
+3/28/2023, 12:01:16 PM - INFO - Server is running on port: 3030 
+3/28/2023, 12:01:19 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: tq1QEh8PksylgvHDCSeIJYiRQ98vJbw0)
+3/28/2023, 12:01:20 PM - ERROR - Failed to Login Invalid email or password (sid: tq1QEh8PksylgvHDCSeIJYiRQ98vJbw0)
+3/28/2023, 12:01:38 PM - INFO - Server is running on port: 3030 
+3/28/2023, 12:01:41 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: jhi2rGEzciJkAb87WnIBpHMbzYZw5czU)
+3/28/2023, 12:01:42 PM - ERROR - Failed to Login Invalid email or password (sid: jhi2rGEzciJkAb87WnIBpHMbzYZw5czU)
+3/28/2023, 12:02:26 PM - DEBUG - auth.service - login with email: baba1@gmail.com (sid: jhi2rGEzciJkAb87WnIBpHMbzYZw5czU)
+3/28/2023, 12:02:27 PM - ERROR - Failed to Login Invalid email or password (sid: jhi2rGEzciJkAb87WnIBpHMbzYZw5czU)
+3/28/2023, 12:02:42 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: jhi2rGEzciJkAb87WnIBpHMbzYZw5czU)
+3/28/2023, 12:03:03 PM - DEBUG - auth.service - signup with email: baba@gmail.com, fullname: דפנה בשן (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:03:03 PM - ERROR - Failed to signup email already exists (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:06:01 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:06:01 PM - ERROR - Failed to Login Invalid email or password (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:07:02 PM - DEBUG - auth.service - login with email: baba@gmail.com (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:07:03 PM - ERROR - Failed to Login Invalid email or password (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:10:00 PM - DEBUG - auth.service - signup with email: baba@gmail.com, fullname: דפנה בשן (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:10:00 PM - ERROR - Failed to signup email already exists (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:11:34 PM - DEBUG - auth.service - login with email: rel.bashan@gmail.com (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:11:34 PM - ERROR - Failed to Login Invalid email or password (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:13:24 PM - DEBUG - auth.service - login with email: rel.bashan@gmail.com (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:13:24 PM - ERROR - Failed to Login Invalid email or password (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:13:41 PM - DEBUG - auth.service - signup with email: baba@gmail.com, fullname: דפנה בשן (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)
+3/28/2023, 12:13:41 PM - ERROR - Failed to signup email already exists (sid: FpOCrieZyjI-HgF6dL_34B8MX3Z2LJXs)

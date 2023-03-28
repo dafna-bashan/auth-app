@@ -21,13 +21,13 @@ async function login(userCred) {
         _saveLocalUser(user);
         return user;
     }
-    throw Error('unregistered user')
+    // throw Error('unregistered user')
 }
 
 async function signup(userCred) {
-    const users = await userService.getUsers()
-    const isUserExist = users.find(user => user.email === userCred.email)
-    if (isUserExist) throw Error('email already exists')
+    // const users = await userService.getUsers()
+    // const isUserExist = users.find(user => user.email === userCred.email)
+    // if (isUserExist) throw Error('email already exists')
 
     // const user = await storageService.post('user', userCred)
     const user = await httpService.post('auth/signup', userCred);

@@ -10,7 +10,7 @@ export function login(userCreds) {
     } catch (err) {
       dispatch({ type: 'SET_ERROR', err })
       console.log('UserActions: err in login', err)
-      throw err
+      // throw err
     }
   }
 }
@@ -23,7 +23,7 @@ export function signup(userCreds) {
       dispatch({ type: 'ADD_USER', user })
       return user
     } catch (err) {
-      dispatch({ type: 'SET_ERROR', err })
+      dispatch({ type: 'SET_ERROR', err})
       console.log('UserActions: err in signup', err)
     }
   }
