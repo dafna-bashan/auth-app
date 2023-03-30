@@ -15,8 +15,12 @@
     }
 }
 
-@media (max-width: $mobile-breakpoint) {
+@media (max-width: $narrow-breakpoint) {
     .nav-bar {
         padding: 23px;
+
+        .username{
+            display: none;
+        }
     }
 }
