@@ -17,10 +17,12 @@ export const UserManu = ({ closeFunc, onLogout }) => {
     // useEffect(() => {
     //     if (!loggedInUser) navigate('/login')
     //   }, [loggedInUser, navigate])
-    
+
 
     return (
-        <div className="user-manu" onClick={closeFunc}>
+        // <div className={isManuOpen? 'user-manu': 'user-manu none'} onClick={closeFunc}>
+        <div className="user-manu"  onClick={closeFunc}>
+
             <div>My Profile</div>
             <div>Group Chat</div>
             <div></div>

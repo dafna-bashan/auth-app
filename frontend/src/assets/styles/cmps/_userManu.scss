@@ -16,6 +16,10 @@
     font-family      : noto-sans-500;
     color            : #4F4F4F;
 
+    &.none {
+        display: none;
+    }
+
     div {
         margin: 0 10px;
 

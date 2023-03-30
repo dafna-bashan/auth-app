@@ -23,7 +23,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
 
     useEffect(() => {
         dispatch({ type: 'REMOVE_ERROR' })
-    }, [])
+    }, [dispatch])
 
 
     const error = useSelector(state => state.errorModule.error)
