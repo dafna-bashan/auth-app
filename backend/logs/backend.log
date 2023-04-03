@@ -155,3 +155,5 @@
 3/30/2023, 10:52:45 AM - DEBUG - auth.service - signup with email: sdsa@gmail.com, fullname: דפנה בשן (sid: rQ8f89CRaRwCLphQZv80sfSk__y5IFGA)
 3/30/2023, 10:52:47 AM - DEBUG - auth.route - new account created: {"email":"sdsa@gmail.com","firstName":"דפנה","lastName":"בשן","password":"$2b$10$uXu0cQgn/L7kpdorfUKCJuTNMeiHt.uM.nTHf2LwoPBJjkKfVxr.m","bio":"","phone":"","imgUrl":"","_id":"64253fcecc05b84d3820d519"} (sid: rQ8f89CRaRwCLphQZv80sfSk__y5IFGA)
 3/30/2023, 10:52:47 AM - DEBUG - auth.service - login with email: sdsa@gmail.com (sid: rQ8f89CRaRwCLphQZv80sfSk__y5IFGA)
+4/3/2023, 12:14:00 PM - INFO - Server is running on port: 3030 
+4/3/2023, 12:14:08 PM - INFO - Server is running on port: 3030 
