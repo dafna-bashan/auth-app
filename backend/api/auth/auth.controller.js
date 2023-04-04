@@ -11,7 +11,7 @@ async function login(req, res) {
         // console.log(`file: auth.controller.js || line 11 || req.session`, req.session)
         res.json(user);
     } catch (err) {
-        logger.error('Failed to Login ' + err);
+        // logger.error('Failed to Login ' + err);
         res.status(401).send({ err: 'Failed to Login: ' + err });
     }
 }
