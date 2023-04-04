@@ -3,7 +3,7 @@ const userService = require('../user/user.service');
 const logger = require('../../services/logger.service');
 
 async function login(email, password) {
-    // logger.debug(`auth.service - login with email: ${email}`);
+    logger.debug(`auth.service - login with email: ${email}`);
 
     const user = await userService.getByEmail(email);
     if (!user) {
@@ -20,9 +20,9 @@ async function login(email, password) {
 async function signup(userCred) {
     console.log('auth service', userCred)
     const { email, firstName, lastName, password } = userCred
-    // logger.debug(
-    //     `auth.service - signup with email: ${email}, fullname: ${firstName} ${lastName}`
-    // );
+    logger.debug(
+        `auth.service - signup with email: ${email}, fullname: ${firstName} ${lastName}`
+    );
     if (!email || !password || !firstName || !lastName) {
         return Promise.reject('fullname, email and password are required!');
     }
