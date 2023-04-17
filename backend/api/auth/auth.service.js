@@ -4,7 +4,7 @@ const logger = require('../../services/logger.service');
 
 async function login(email, password) {
     logger.debug(`auth.service - login with email: ${email}`);
-
+    email = email.toLowerCase()
     const user = await userService.getByEmail(email);
     if (!user) {
         console.log('line 10 Auth service - wrong cred!!!!')
@@ -19,6 +19,7 @@ async function login(email, password) {
 
 async function signup(userCred) {
     console.log('auth service', userCred)
+    userCred.email = userCred.email.toLowerCase()
     const { email, firstName, lastName, password } = userCred
     logger.debug(
         `auth.service - signup with email: ${email}, fullname: ${firstName} ${lastName}`
