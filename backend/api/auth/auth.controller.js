@@ -4,14 +4,11 @@ const logger = require('../../services/logger.service');
 async function login(req, res) {
     const { email, password } = req.body;
     console.log('auth controller email =', email);
-    // console.log(' auth controller password =', password);
     try {
         const user = await authService.login(email, password);
         const loginToken = authService.getLoginToken(user)
         logger.info('User login: ', user)
         res.cookie('loginToken', loginToken, {sameSite: 'None', secure: true})
-        // req.session.user = user;
-        // console.log(`file: auth.controller.js || line 11 || req.session`, req.session)
         res.json(user);
     } catch (err) {
         logger.error('Failed to Login ' + err);
@@ -30,7 +27,6 @@ async function signup(req, res) {
         const user = await authService.login(email, password);
         const loginToken = authService.getLoginToken(user)
         res.cookie('loginToken', loginToken, {sameSite: 'None', secure: true})
-        // req.session.user = user;
         res.json(user);
     } catch (err) {
         logger.error('Failed to signup ' + err);
@@ -41,7 +37,6 @@ async function signup(req, res) {
 async function logout(req, res) {
     try {
         res.clearCookie('loginToken')
-        // req.session.destroy();
         res.send({ msg: 'Logged out successfully' });
     } catch (err) {
         res.status(500).send({ err: 'Failed to logout' });
