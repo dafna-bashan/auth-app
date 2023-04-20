@@ -1,28 +1,19 @@
 import React from 'react'
-// import { useDispatch, useSelector} from 'react-redux'
-// import { useNavigate } from 'react-router-dom'
-// import { logout } from '../store/actions/authActions'
+import { useDispatch } from 'react-redux'
+import { logout } from '../store/actions/authActions'
 
-export const UserManu = ({ closeFunc, onLogout }) => {
+export const UserManu = ({ closeFunc }) => {
 
-    // const navigate = useNavigate()
-    // const dispatch = useDispatch()
-    // const loggedInUser = useSelector(state => state.userModule.loggedInUser)
+    const dispatch = useDispatch()
 
-    // const onLogout = () => {
-    //     console.log('logout')
-    //     dispatch(logout())
-    // }
-
-    // useEffect(() => {
-    //     if (!loggedInUser) navigate('/login')
-    //   }, [loggedInUser, navigate])
+    const onLogout = () => {
+        console.log('logout')
+        dispatch(logout())
+    }
 
 
     return (
-        // <div className={isManuOpen? 'user-manu': 'user-manu none'} onClick={closeFunc}>
-        <div className="user-manu"  onClick={closeFunc}>
-
+        <div className="user-manu" onClick={closeFunc}>
             <div>My Profile</div>
             <div>Group Chat</div>
             <div></div>

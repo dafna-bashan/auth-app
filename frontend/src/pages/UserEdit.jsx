@@ -55,9 +55,6 @@ export const UserEdit = () => {
         // console.log(loggedInUser)
     }, [isSuccessful, loggedInUser, navigate])
 
-    // useEffect(() => {
-    //     if (!loggedInUser) navigate('/login')
-    // }, [loggedInUser, navigate])
 
     if (!loggedInUser) return <div></div>
 

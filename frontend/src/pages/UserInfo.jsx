@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../store/actions/authActions'
 
 export const UserInfo = () => {
 
@@ -12,10 +11,10 @@ export const UserInfo = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const onLogout = () => {
-        console.log('logout')
-        dispatch(logout())
-    }
+    // const onLogout = () => {
+    //     console.log('logout')
+    //     dispatch(logout())
+    // }
 
     useEffect(() => {
         dispatch({ type: 'RESTART' })
@@ -32,7 +31,7 @@ export const UserInfo = () => {
     const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
     return (
         <React.Fragment>
-            <NavBar onLogout={onLogout} />
+            <NavBar/>
             <div className="user-info">
                 <div className="center">
                     <div className="title">Personal info</div>
