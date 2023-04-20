@@ -15,10 +15,10 @@ export const UserEdit = () => {
     const navigate = useNavigate()
 
     const [user, setUser] = useState(loggedInUser)
-    const { firstName, lastName, bio = '', phone = '', imgUrl = userImg, email } = user
+    
 
     const [img, setImg] = useState({
-        imgUrl,
+        imgUrl: user?.imgUrl,
         height: '40px',
         width: '100%',
         isUploading: false
@@ -61,7 +61,7 @@ export const UserEdit = () => {
 
     if (!loggedInUser) return <div></div>
 
-
+    const { firstName, lastName, bio = '', phone = '', imgUrl = userImg, email } = user
 
     return (
         <React.Fragment>
