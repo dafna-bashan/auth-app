@@ -7,7 +7,10 @@ async function login(req, res) {
     // console.log(' auth controller password =', password);
     try {
         const user = await authService.login(email, password);
-        req.session.user = user;
+        const loginToken = authService.getLoginToken(user)
+        logger.info('User login: ', user)
+        res.cookie('loginToken', loginToken, {sameSite: 'None', secure: true})
+        // req.session.user = user;
         // console.log(`file: auth.controller.js || line 11 || req.session`, req.session)
         res.json(user);
     } catch (err) {
@@ -25,7 +28,9 @@ async function signup(req, res) {
             `auth.route - new account created: ` + JSON.stringify(account)
         );
         const user = await authService.login(email, password);
-        req.session.user = user;
+        const loginToken = authService.getLoginToken(user)
+        res.cookie('loginToken', loginToken, {sameSite: 'None', secure: true})
+        // req.session.user = user;
         res.json(user);
     } catch (err) {
         logger.error('Failed to signup ' + err);
@@ -35,7 +40,8 @@ async function signup(req, res) {
 
 async function logout(req, res) {
     try {
-        req.session.destroy();
+        res.clearCookie('loginToken')
+        // req.session.destroy();
         res.send({ msg: 'Logged out successfully' });
     } catch (err) {
         res.status(500).send({ err: 'Failed to logout' });

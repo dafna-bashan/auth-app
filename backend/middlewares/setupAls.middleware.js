@@ -1,20 +1,18 @@
-const logger = require('../services/logger.service')
+const authService = require('../api/auth/auth.service')
 const asyncLocalStorage = require('../services/als.service')
 
 async function setupAsyncLocalStorage(req, res, next) {
   const storage = {}
   asyncLocalStorage.run(storage, () => {
-    if (req.sessionID) {
+    if (!req.cookies) return next()
+    const loggedinUser = authService.validateToken(req.cookies.loginToken)
+
+    if (loggedinUser) {
       const alsStore = asyncLocalStorage.getStore()
-      alsStore.sessionId = req.sessionID
-      if (req.session.user) {
-        alsStore.userId = req.session.user._id
-        alsStore.isAdmin = req.session.user.isAdmin
-      }
+      alsStore.loggedinUser = loggedinUser
     }
     next()
   })
 }
 
 module.exports = setupAsyncLocalStorage
-
