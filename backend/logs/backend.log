@@ -311,3 +311,11 @@
 4/23/2023, 11:14:02 AM - ERROR - Failed to Login Invalid email or password 
 4/23/2023, 11:14:03 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
 4/23/2023, 11:14:03 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:39:05 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:39:05 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:42:31 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:42:31 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:42:32 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:42:32 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:51:01 AM - INFO - Server is running on port: 3030 
+4/23/2023, 11:51:13 AM - INFO - Server is running on port: 3030 
