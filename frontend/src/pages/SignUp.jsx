@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { signup } from '../store/actions/authActions'
 
-export const SignUp = () => {
+export function SignUp() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

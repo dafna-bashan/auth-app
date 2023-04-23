@@ -4,7 +4,7 @@ import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { useDispatch, useSelector } from 'react-redux'
 
-export const UserInfo = () => {
+export function UserInfo() {
 
     const loggedInUser = useSelector(state => state.userModule.loggedInUser)
 
@@ -31,7 +31,7 @@ export const UserInfo = () => {
     const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
     return (
         <React.Fragment>
-            <NavBar/>
+            <NavBar />
             <div className="user-info">
                 <div className="center">
                     <div className="title">Personal info</div>

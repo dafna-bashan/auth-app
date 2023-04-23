@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from '../store/actions/userActions'
 
-export const UserEdit = () => {
+export function UserEdit() {
 
     const loggedInUser = useSelector(state => state.userModule.loggedInUser)
     const isSuccessful = useSelector(state => state.systemModule.isSuccessful)
@@ -15,7 +15,7 @@ export const UserEdit = () => {
     const navigate = useNavigate()
 
     const [user, setUser] = useState(loggedInUser)
-    
+
 
     const [img, setImg] = useState({
         imgUrl: user?.imgUrl,

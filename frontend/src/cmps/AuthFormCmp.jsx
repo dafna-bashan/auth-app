@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
+import { Loader } from './Loader';
 // import { useForm } from '../hooks/useForm'
 
-export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => {
+export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
 
     const dispatch = useDispatch()
     const [isSubmiting, setIsSubmiting] = useState(false)
@@ -28,12 +29,16 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
 
 
     const error = useSelector(state => state.errorModule.error)
+    const isLoading = useSelector(state => state.systemModule.isLoading)
+
 
     const onSubmit = () => {
         console.log('submitted!');
+        dispatch({ type: 'REMOVE_ERROR' })
         setIsSubmiting(true)
         submitFunc(credentials)
     }
+
 
     // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
     const validate = (values) => {
@@ -103,7 +108,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
                         {/* {error && <ErrorModal error={error} />} */}
                         {error && <div className="error">{error}</div>}
                     </div>
-                    <button type="submit">{btnTxt}</button>
+                    <button type="submit">{isLoading ? <Loader /> : btnTxt}</button>
                 </Form>
             </Formik>
             <span>{bottomLine}</span>

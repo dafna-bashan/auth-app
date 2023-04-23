@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../store/actions/authActions'
 
-export const Login = () => {
+export function Login() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

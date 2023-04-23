@@ -221,3 +221,93 @@
 4/23/2023, 10:13:46 AM - ERROR - Failed to Login Invalid email or password 
 4/23/2023, 10:14:05 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
 4/23/2023, 10:14:05 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba ba","phone":"123456","imgUrl":""} 
+4/23/2023, 10:36:47 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:36:47 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:38:55 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:38:56 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:39:42 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:39:42 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:40:10 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:40:10 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:42:31 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:42:32 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:43:12 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:43:12 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:43:33 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:43:33 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 10:44:29 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:44:29 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:44:32 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:44:32 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:45:14 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:45:14 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:45:48 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:45:48 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:55:10 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:55:10 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:55:20 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:55:20 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:55:38 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:55:38 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:55:39 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:55:39 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:56:38 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:56:38 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:56:44 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:56:44 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:58:50 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:58:50 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:58:53 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:58:53 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:59:22 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:59:22 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:59:36 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:59:36 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 10:59:38 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 10:59:38 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:04:34 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:04:34 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:09:07 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:09:07 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:09:10 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:09:10 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:09:19 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:09:19 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:09:20 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:09:21 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:10:52 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:10:52 AM - INFO - User login:  | {"_id":"64252e83e65e964cc8cf186a","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"la la la ba bacczxzcz","phone":"123456","imgUrl":""} 
+4/23/2023, 11:12:30 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:12:30 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:10 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:10 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:11 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:11 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:20 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:20 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:21 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:22 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:26 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:26 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:36 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:36 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:37 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:37 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:38 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:39 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:40 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:40 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:50 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:50 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:51 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:51 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:52 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:52 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:13:53 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:13:53 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:14:01 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:14:01 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:14:02 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:14:02 AM - ERROR - Failed to Login Invalid email or password 
+4/23/2023, 11:14:03 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+4/23/2023, 11:14:03 AM - ERROR - Failed to Login Invalid email or password 

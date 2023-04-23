@@ -4,13 +4,15 @@ import { authService } from '../../services/authService'
 export function login(userCreds) {
   return async dispatch => {
     try {
+      dispatch({ type: 'LOADING_START' })
       const user = await authService.login(userCreds)
       dispatch({ type: 'SET_USER', user })
       return user
     } catch (err) {
       dispatch({ type: 'SET_ERROR', err })
       console.log('UserActions: err in login', err)
-      // throw err
+    } finally {
+      dispatch({ type: 'LOADING_DONE' })
     }
   }
 }
@@ -18,13 +20,16 @@ export function login(userCreds) {
 export function signup(userCreds) {
   return async dispatch => {
     try {
+      dispatch({ type: 'LOADING_START' })
       const user = await authService.signup(userCreds)
       dispatch({ type: 'SET_USER', user })
       dispatch({ type: 'ADD_USER', user })
       return user
     } catch (err) {
-      dispatch({ type: 'SET_ERROR', err})
+      dispatch({ type: 'SET_ERROR', err })
       console.log('UserActions: err in signup', err)
+    } finally {
+      dispatch({ type: 'LOADING_DONE' })
     }
   }
 }

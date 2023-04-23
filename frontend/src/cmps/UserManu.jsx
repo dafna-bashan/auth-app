@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { logout } from '../store/actions/authActions'
 
-export const UserManu = ({ closeFunc }) => {
+export function UserManu({ closeFunc }) {
 
     const dispatch = useDispatch()
 
