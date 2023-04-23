@@ -34,7 +34,7 @@ export function updateUser(user) {
       await userService.update(user)
       dispatch({ type: 'UPDATE_USER', user })
     } catch (err) {
-      console.log('UserActions: err in removeUser', err)
+      console.log('UserActions: err in updateUser', err)
     }
     finally {
       dispatch({ type: 'LOADING_DONE' })

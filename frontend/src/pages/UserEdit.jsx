@@ -6,11 +6,14 @@ import userImg from '../assets/img/user-img.png'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from '../store/actions/userActions'
+import { Loader } from '../cmps/Loader'
 
 export function UserEdit() {
 
     const loggedInUser = useSelector(state => state.userModule.loggedInUser)
     const isSuccessful = useSelector(state => state.systemModule.isSuccessful)
+    const isLoading = useSelector(state => state.systemModule.isLoading)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -85,7 +88,7 @@ export function UserEdit() {
                     <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." value={phone} onChange={handleChange} />
                     <label htmlFor="pass">Password</label>
                     <input type="password" id="pass" name="password" placeholder="Enter your new password..." autoComplete="new-password" onChange={handleChange} />
-                    <button>Save</button>
+                    <button>{isLoading ? <Loader /> : 'Save'}</button>
                 </form>
             </div>
         </React.Fragment>
