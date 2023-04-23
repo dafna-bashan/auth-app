@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => {
 
     const dispatch = useDispatch()
+    const [isSubmiting, setIsSubmiting] = useState(false)
 
     // const [credentials, handleChange] = useForm({
     //     firstName: '',
@@ -30,6 +31,7 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
 
     const onSubmit = () => {
         console.log('submitted!');
+        setIsSubmiting(true)
         submitFunc(credentials)
     }
 
@@ -37,7 +39,10 @@ export const AuthFormCmp = ({ type, title, btnTxt, submitFunc, bottomLine }) => 
     const validate = (values) => {
 
         // console.log("MyForm ~ values", values)
-
+        if (isSubmiting) {
+            dispatch({ type: 'REMOVE_ERROR' })
+            setIsSubmiting(false)
+        }
         const errors = {};
         if (type === 'signup') {
             if (!values.firstName) {
