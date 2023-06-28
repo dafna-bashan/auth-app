@@ -15,9 +15,9 @@ export function NavBar({ onLogout }) {
     if (isManuOpen) setIsManuOpen(false)
     else setIsManuOpen(true)
   }
-  useEffect(() => {
-    if (!loggedInUser) navigate('/login')
-  }, [loggedInUser, navigate])
+  // useEffect(() => {
+  //   if (!loggedInUser) navigate('/login')
+  // }, [loggedInUser, navigate])
 
 
   return (
