@@ -11,10 +11,14 @@ async function login(email, password) {
     const user = await userService.getByEmail(email);
     if (!user) {
         console.log('line 10 Auth service - wrong cred!!!!')
+        logger.debug(`auth.service - login with email: ${email}, wrong email`);
         return Promise.reject('Invalid email or password');
     }
     const match = await bcrypt.compare(password, user.password)
-    if (!match) return Promise.reject('Invalid email or password')
+    if (!match) {
+        logger.debug(`auth.service - login with email: ${email}, wrong password`);
+        return Promise.reject('Invalid email or password')
+    }
     delete user.password;
     return user;
 }
@@ -35,6 +39,9 @@ async function signup(userCred) {
 
     const saltRounds = 10
     const hash = await bcrypt.hash(password, saltRounds)
+    logger.debug(
+        `auth.service - signup with email: ${email}, pass:${password}, hash: ${hash}`
+    );
     return userService.add({ ...userCred, password: hash })
 }
 

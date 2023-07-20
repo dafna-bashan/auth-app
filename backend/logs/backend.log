@@ -327,3 +327,42 @@
 4/24/2023, 2:54:38 PM - DEBUG - auth.service - signup with email: dafnaba1@gmail.com, fullname: דפנה בשן 
 4/24/2023, 2:54:41 PM - DEBUG - auth.route - new account created: {"email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","password":"$2b$10$Mld/WMK7gKWX2sNgi.9e/e4o3QxseSKZ3bHcNAI0CxZW/MzuQla0u","bio":"","phone":"","imgUrl":"","_id":"64466e0061177bb607d9f564"} 
 4/24/2023, 2:54:41 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/2/2023, 10:43:37 AM - INFO - Server is running on port: 3030 
+7/2/2023, 10:45:37 AM - DEBUG - auth.service - signup with email: dafnaba12@gmail.com, fullname: דפנה בשן 
+7/2/2023, 10:45:39 AM - DEBUG - auth.route - new account created: {"email":"dafnaba12@gmail.com","firstName":"דפנה","lastName":"בשן","password":"$2b$10$Ie.eKiimX8yd6el05hal6uUicJ8AJSFTgXYtduNBBimUmrBY2L.5W","bio":"","phone":"","imgUrl":"","_id":"64a12b23cece912d0087cb4b"} 
+7/2/2023, 10:45:39 AM - DEBUG - auth.service - login with email: dafnaba12@gmail.com 
+7/4/2023, 1:54:32 PM - INFO - Server is running on port: 3030 
+7/4/2023, 1:59:48 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/4/2023, 1:59:50 PM - ERROR - Failed to Login Invalid email or password 
+7/4/2023, 2:50:02 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/4/2023, 2:50:02 PM - INFO - User login:  | {"_id":"64466e0061177bb607d9f564","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"","phone":"","imgUrl":""} 
+7/4/2023, 3:18:57 PM - DEBUG - auth.service - signup with email: dafnab234@gmail.com, fullname: Dafna Bashan 
+7/4/2023, 3:18:58 PM - DEBUG - auth.route - new account created: {"email":"dafnab234@gmail.com","firstName":"Dafna","lastName":"Bashan","password":"$2b$10$lQsc18Ckhrwvs3ijOR.y6eSZ9gtnGHIgaePph5KjBmxJ19WhvUBQi","bio":"","phone":"","imgUrl":"","_id":"64a40e327978865c2ba32201"} 
+7/4/2023, 3:18:58 PM - DEBUG - auth.service - login with email: dafnab234@gmail.com 
+7/4/2023, 3:24:19 PM - DEBUG - auth.service - signup with email: dafna@gmail.com, fullname: Dafna Bashan 
+7/4/2023, 3:24:20 PM - DEBUG - auth.route - new account created: {"email":"dafna@gmail.com","firstName":"Dafna","lastName":"Bashan","password":"$2b$10$s.DNKTf1ibspjjTssxQOAOT5nEX.T3IrRy8RE7WH9RtsHmHJs1DBi","bio":"","phone":"","imgUrl":"","_id":"64a40f747978865c2ba32202"} 
+7/4/2023, 3:24:20 PM - DEBUG - auth.service - login with email: dafna@gmail.com 
+7/4/2023, 3:26:19 PM - DEBUG - auth.service - login with email: dafnab@gmail.com 
+7/4/2023, 3:26:19 PM - ERROR - Failed to Login Invalid email or password 
+7/4/2023, 3:27:09 PM - DEBUG - auth.service - signup with email: dafnab1@gmail.com, fullname: Dafna Bashan 
+7/4/2023, 3:27:09 PM - DEBUG - auth.route - new account created: {"email":"dafnab1@gmail.com","firstName":"Dafna","lastName":"Bashan","password":"$2b$10$nyYkezsf5Qq7lgVOiAgh7.fDNs/nEePxVWCZuqdSXbY8TqT9X9gR2","bio":"","phone":"","imgUrl":"","_id":"64a4101d7978865c2ba32203"} 
+7/4/2023, 3:27:09 PM - DEBUG - auth.service - login with email: dafnab1@gmail.com 
+7/4/2023, 3:30:54 PM - DEBUG - auth.service - login with email: dafnaba123@gmail.com 
+7/4/2023, 3:30:54 PM - ERROR - Failed to Login Invalid email or password 
+7/4/2023, 3:31:32 PM - DEBUG - auth.service - signup with email: dafnaba123@gmail.com, fullname: dafna bashan 
+7/4/2023, 3:31:32 PM - ERROR - Failed to signup email already exists 
+7/4/2023, 3:31:40 PM - DEBUG - auth.service - signup with email: dafnaba12@gmail.com, fullname: dafna bashan 
+7/4/2023, 3:31:40 PM - ERROR - Failed to signup email already exists 
+7/4/2023, 3:31:54 PM - DEBUG - auth.service - signup with email: dafnaba234@gmail.com, fullname: dafna bashan 
+7/4/2023, 3:31:54 PM - DEBUG - auth.route - new account created: {"email":"dafnaba234@gmail.com","firstName":"dafna","lastName":"bashan","password":"$2b$10$caS8GqmWX.YIVKNt5HMKh.Dul3S.t4zWH0ft9nt4jakcWH.4IXi.O","bio":"","phone":"","imgUrl":"","_id":"64a4113a7978865c2ba32204"} 
+7/4/2023, 3:31:54 PM - DEBUG - auth.service - login with email: dafnaba234@gmail.com 
+7/4/2023, 3:34:55 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/4/2023, 3:34:55 PM - ERROR - Failed to Login Invalid email or password 
+7/4/2023, 3:36:11 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/4/2023, 3:36:11 PM - ERROR - Failed to Login Invalid email or password 
+7/4/2023, 3:36:48 PM - DEBUG - auth.service - signup with email: dafnaba@gmail.com, fullname: Dafna Bashan 
+7/4/2023, 3:36:48 PM - ERROR - Failed to signup email already exists 
+7/4/2023, 3:36:56 PM - DEBUG - auth.service - signup with email: dafnaba1@gmail.com, fullname: Dafna Bashan 
+7/4/2023, 3:36:56 PM - DEBUG - auth.route - new account created: {"email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","password":"$2b$10$9aKUGKc4QHmbAC7fB3ovLuXx.3NKL79GeUibbYDQqqy6eFjdIXXWe","bio":"","phone":"","imgUrl":"","_id":"64a412687978865c2ba32205"} 
+7/4/2023, 3:36:56 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/20/2023, 1:29:05 PM - INFO - Server is running on port: 3030 

@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './Loader';
-// import { useForm } from '../hooks/useForm'
 
 export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
 
     const dispatch = useDispatch()
     const [isSubmiting, setIsSubmiting] = useState(false)
-
-    // const [credentials, handleChange] = useForm({
-    //     firstName: '',
-    //     lastName: '',
-    //     email: '',
-    //     password: ''
-    // })
-
     const [credentials, setCredentials] = useState({
         firstName: '',
         lastName: '',
@@ -23,14 +14,13 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
         password: ''
     })
 
+    const error = useSelector(state => state.errorModule.error)
+    const isLoading = useSelector(state => state.systemModule.isLoading)
+    // const inputRef = useRef(null)
+
     useEffect(() => {
         dispatch({ type: 'REMOVE_ERROR' })
     }, [dispatch])
-
-
-    const error = useSelector(state => state.errorModule.error)
-    const isLoading = useSelector(state => state.systemModule.isLoading)
-
 
     const onSubmit = () => {
         console.log('submitted!');
@@ -41,9 +31,11 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
 
 
     // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
-    const validate = (values) => {
 
+
+    const validate = (values) => {
         // console.log("MyForm ~ values", values)
+        values = values.replace(/\s/g, '')
         if (isSubmiting) {
             dispatch({ type: 'REMOVE_ERROR' })
             setIsSubmiting(false)
@@ -51,6 +43,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
         const errors = {};
         if (type === 'signup') {
             if (!values.firstName) {
+                // if(document.activeElement === inputRef.current) 
                 errors.firstName = 'Required';
             }
             if (!values.lastName) {
@@ -64,11 +57,12 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
         ) {
             errors.email = 'Invalid email address';
         }
-        if (values.password.length < 8) {
-            errors.password = 'too short pass'
+        if (!/^.{8,20}$/.test(values.password)) {
+            errors.password = 'Use at least 8 characters'
         }
-        else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) {
-            errors.password = 'Use at least one number and one capital letter'
+        // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
+        else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,20}$/.test(values.password)) {
+            errors.password = 'Use at least one number, one capital letter and one lower-case letter. '
         }
 
         setCredentials(values)
@@ -76,6 +70,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
         return errors;
     }
 
+    function onEnterPass(ev) {
+        if (ev.code === 'Space') ev.preventDefault()
+    }
 
     return (
         <div className="form-container">
@@ -98,11 +95,11 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine }) {
                             </div>
                         </React.Fragment>
                     }
-                    <Field type="email" name="email" placeholder="Email" />
+                    <Field type="email" name="email" placeholder="Email" onKeyDown={onEnterPass} />
                     <div className="error-con">
                         <ErrorMessage name="email" component="div" className="error" />
                     </div>
-                    <Field type="password" name="password" placeholder="Password" />
+                    <Field type="password" name="password" placeholder="Password" onKeyDown={onEnterPass} />
                     <div className="error-con">
                         <ErrorMessage name="password" component="div" className="error" />
                         {/* {error && <ErrorModal error={error} />} */}
