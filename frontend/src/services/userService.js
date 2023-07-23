@@ -30,7 +30,7 @@ function remove(userId) {
 async function update(user) {
     // const updatedUser = await storageService.put('user', user)
     const updatedUser = await httpService.put(`user/${user._id}`, user);
-    sessionStorage.setItem('loggedinUser', JSON.stringify(updatedUser));
+    if (updatedUser) sessionStorage.setItem('loggedinUser', JSON.stringify(updatedUser));
 }
 
 

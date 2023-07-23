@@ -30,6 +30,7 @@ export function SignUp() {
 
     return (
         <div className="auth-container">
+            <div className="main-title">Auth app</div>
             <AuthFormCmp type="signup" title="Join us!" btnTxt="Register" submitFunc={onSignUp} bottomLine={bottomLine} />
         </div>
     )

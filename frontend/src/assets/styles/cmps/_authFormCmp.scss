@@ -7,6 +7,7 @@
     width          : 100vw;
 
 
+
     .form-container {
 
         margin        : 0 auto;
@@ -35,6 +36,10 @@
 
         }
 
+        .MuiCheckbox-root {
+            margin-bottom: 24px;
+        }
+
         // input:first-of-type {
         //     margin-bottom: 15px;
         // }
@@ -44,7 +49,7 @@
         // }
 
         button {
-            height: 38px;
+            height       : 38px;
             font-size    : 16px;
             line-height  : 22px;
             background   : #2F80ED;
@@ -66,25 +71,27 @@
                 color: #2D9CDB;
             }
         }
-    }
 
-    .error {
-        font-size    : 14px;
-        padding-left : 10px;
-        color        : red;
-        margin-bottom: 15px;
-    }
-
-    .error-con {
-        height: 40px;
-        width : 350px;
     }
 }
 
+.error-con {
+    height: 40px;
+    width : 350px;
+}
+
+.error {
+    font-size    : 14px;
+    padding-left : 10px;
+    color        : red;
+    margin-bottom: 15px;
+}
+
+
 @media (max-width: $mobile-breakpoint) {
     .auth-container {
-        .form-container{
-            border: none;
+        .form-container {
+            border : none;
             padding: 0;
         }
 

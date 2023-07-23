@@ -33,14 +33,18 @@
 
     input,
     textarea {
-        color           : #828282;
+        color              : #828282;
         // color        : #BDBDBD;
-        padding         : 17px;
-        border          : 1px solid #828282;
-        border-radius   : 12px;
-        resize          : none;
-        margin-bottom   : 24px;
-        width           : 415px;
+        padding            : 17px;
+        border             : 1px solid #828282;
+        border-radius      : 12px;
+        resize             : none;
+        // margin-bottom   : 24px;
+        width              : 415px;
+    }
+
+    textarea {
+        margin-bottom: 24px;
     }
 
     button {

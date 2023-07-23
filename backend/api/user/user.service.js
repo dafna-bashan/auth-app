@@ -2,6 +2,7 @@
 const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
+const bcrypt = require('bcrypt')
 
 module.exports = {
     query,
@@ -64,7 +65,26 @@ async function remove(userId) {
 
 async function update(user) {
     try {
-        const userToSave = { ...user }
+        logger.debug(`update user ${JSON.stringify(user)}`)
+        var userToSave = { ...user }
+        if (user.password) {
+            const existingUser = await getByEmail(user.email)
+            console.log('existingUser', existingUser);
+            const match = await bcrypt.compare(user.password, existingUser.password)
+            if (!match) {
+                logger.debug(`user.service - update user: ${user.email}, wrong password`);
+                return Promise.reject('invalid password')
+            }
+            const isSamePass =  await bcrypt.compare(user.newPassword, existingUser.password)
+            if (isSamePass) {
+                logger.debug(`user.service - update user: ${user.email}, new password is identical to the old one`);
+                return Promise.reject('this password is already in use')
+            }
+            const saltRounds = 10
+            const hash = await bcrypt.hash(user.newPassword, saltRounds)
+            userToSave.password = hash
+            delete userToSave.newPassword
+        }
         delete userToSave._id
         const collection = await dbService.getCollection('user')
         const res = await collection.updateOne({ _id: ObjectId(user._id) }, { $set: userToSave })
