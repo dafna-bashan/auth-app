@@ -468,3 +468,8 @@
 7/23/2023, 3:28:41 PM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"","phone":"","imgUrl":"","password":"123456Dff","newPassword":"21789634Df"} 
 7/23/2023, 3:28:42 PM - DEBUG - user.service - update user: dafnaba1@gmail.com, wrong password 
 7/23/2023, 3:28:42 PM - ERROR - Failed to update user | invalid password 
+7/24/2023, 10:48:53 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bjlnkjnkl,m mkl;kmklml;mkl;klmlk;mkmkmkm;klm kl;mlmkl;lkmkl;lkm l;mkl;kml ;lmkl;mkl; l;mklml;m kl nkl;mkl;mkl mklm;lkm mklm;l klmklmkl; kmkl;mlkml hjklhjkl njknjklnjk njknjklnjkl nknknjkl njklnjknj nk","phone":"","imgUrl":"","password":"123456Dff","newPassword":"dsDSDFFAFAFAFFSggd3g"} 
+7/24/2023, 10:48:55 AM - DEBUG - user.service - update user: dafnaba1@gmail.com, wrong password 
+7/24/2023, 10:48:55 AM - ERROR - Failed to update user | invalid password 
+7/24/2023, 10:52:32 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"","phone":"","imgUrl":""} 
+7/24/2023, 10:52:40 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"","imgUrl":""} 

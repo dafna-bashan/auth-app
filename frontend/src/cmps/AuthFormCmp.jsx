@@ -33,6 +33,15 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         dispatch({ type: 'REMOVE_ERROR' })
     }, [dispatch])
 
+    useEffect(() => {
+        if (!isChangePass) {
+            const data = { ...credentials }
+            delete data.password
+            delete data.newPassword
+            setCredentials(data)
+        }
+    }, [isChangePass])
+
     const onSubmit = () => {
         console.log('submitted!', credentials);
         dispatch({ type: 'REMOVE_ERROR' })
@@ -118,12 +127,12 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     {type !== 'login' &&
                         <React.Fragment>
                             {type === 'profile-edit' && <label htmlFor="firstName">First Name</label>}
-                            <Field name="firstName" placeholder="First name" />
+                            <Field type="text" name="firstName" placeholder="First name" />
                             <div className="error-con">
                                 <ErrorMessage name="firstName" component="div" className="error" />
                             </div>
                             {type === 'profile-edit' && <label htmlFor="lastName">Last Name</label>}
-                            <Field name="lastName" placeholder="Last name" />
+                            <Field type="text" name="lastName" placeholder="Last name" />
                             <div className="error-con">
                                 <ErrorMessage name="lastName" component="div" className="error" />
                             </div>
@@ -139,12 +148,13 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     {type === 'profile-edit' &&
                         <React.Fragment>
                             <label htmlFor="phone">Phone</label>
-                            <Field type="phone" name="phone" placeholder="Enter your mobile phone number" onKeyDown={onEnterPass} />
+                            <Field type="tel" name="phone" placeholder="Enter your mobile phone number" onKeyDown={onEnterPass} />
                             <div className="error-con">
                                 <ErrorMessage name="mobile" component="div" className="error" />
                             </div>
                             <label htmlFor="bio">Bio</label>
-                            <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio"></textarea>
+                            <Field type="text" as="textarea" name="bio" cols="30" rows="5" maxLength="200" placeholder="Enter your bio" />
+                            {/* <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio"></textarea> */}
                         </React.Fragment>}
                     {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
                     {type !== 'profile-edit' | isChangePass ?
@@ -153,8 +163,6 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             <Field type="password" name="password" placeholder={type === 'profile-edit' ? "Enter your current password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                             <div className="error-con">
                                 <ErrorMessage name="password" component="div" className="error" />
-                                {/* {error && <ErrorModal error={error} />} */}
-                                {/* {error && <div className="error">{error}</div>} */}
                             </div>
                         </React.Fragment> : null}
                     {isChangePass && <React.Fragment>
@@ -162,7 +170,6 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                         <Field type="password" name="newPassword" placeholder={type === 'profile-edit' ? "Enter your new password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                         <div className="error-con">
                             <ErrorMessage name="newPassword" component="div" className="error" />
-                            {/* {error && <ErrorModal error={error} />} */}
                         </div>
                     </React.Fragment>}
                     {error && <div className="error">{error}</div>}
