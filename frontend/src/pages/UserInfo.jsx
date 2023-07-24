@@ -54,20 +54,16 @@ export function UserInfo() {
                         <div>{firstName} {lastName}</div>
                     </div>
                     <div className="field">
+                        <div>EMAIL</div>
+                        <div>{email}</div>
+                    </div>
+                    <div className="field bio">
                         <div>BIO</div>
                         <div>{bio}</div>
                     </div>
                     <div className="field">
                         <div>PHONE</div>
                         <div>{phone}</div>
-                    </div>
-                    <div className="field">
-                        <div>EMAIL</div>
-                        <div>{email}</div>
-                    </div>
-                    <div className="field">
-                        <div>PASSWORD</div>
-                        <div>********</div>
                     </div>
                 </div>
             </div>

@@ -482,3 +482,4 @@
 7/24/2023, 12:04:44 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
 7/24/2023, 12:04:44 PM - INFO - User login:  | {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"","imgUrl":""} 
 7/24/2023, 2:41:46 PM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"0525000000","imgUrl":""} 
+7/24/2023, 2:51:21 PM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg gfmkspmkfdl mkofmlskdf mkpmfdla mkfpmaldv vmfkpadmvkl vmfklvmfdkl mvdfklsdm;l vfmkdam;dlkmv mvkfld;sm vmdfkla;mfl vmdfkls;mk mfkdl;mdlkm fmdksldvmf; fmdkls;dfk vmfkdl;mdfklv fvdmklav; vmdfklav","phone":"0525000000","imgUrl":""} 
