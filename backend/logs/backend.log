@@ -473,3 +473,12 @@
 7/24/2023, 10:48:55 AM - ERROR - Failed to update user | invalid password 
 7/24/2023, 10:52:32 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"","phone":"","imgUrl":""} 
 7/24/2023, 10:52:40 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"","imgUrl":""} 
+7/24/2023, 11:02:39 AM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"","imgUrl":"","password":"123456Df","newPassword":"123456Df"} 
+7/24/2023, 11:02:39 AM - DEBUG - user.service - update user: dafnaba1@gmail.com, new password is identical to the old one 
+7/24/2023, 11:02:39 AM - ERROR - Failed to update user | this password is already in use 
+7/24/2023, 11:55:18 AM - DEBUG - auth.service - login with email: dafnaba12@gmail.com 
+7/24/2023, 11:55:18 AM - DEBUG - auth.service - login with email: dafnaba12@gmail.com, wrong password 
+7/24/2023, 11:55:18 AM - ERROR - Failed to Login Invalid email or password 
+7/24/2023, 12:04:44 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+7/24/2023, 12:04:44 PM - INFO - User login:  | {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"","imgUrl":""} 
+7/24/2023, 2:41:46 PM - DEBUG - update user {"_id":"64bd0d0d88fafd03a3f10e99","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gfdzdfg","phone":"0525000000","imgUrl":""} 

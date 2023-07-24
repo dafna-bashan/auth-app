@@ -29,7 +29,6 @@ export function Login() {
 
     return (
         <div className="auth-container">
-            <div className="main-title">Auth app</div>
             <AuthFormCmp type="login" title="Login" btnTxt="Login" submitFunc={onLogin} bottomLine={bottomLine} />
         </div>
     )

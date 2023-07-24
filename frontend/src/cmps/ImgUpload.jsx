@@ -14,6 +14,7 @@ export function ImgUpload({ defaultImgUrl, alt, onUploadImg }) {
         if (img.imgUrl !== defaultImgUrl) {
             onUploadImg(img.imgUrl)
         }
+        // eslint-disable-next-line
     }, [img.imgUrl])
 
 
@@ -32,7 +33,7 @@ export function ImgUpload({ defaultImgUrl, alt, onUploadImg }) {
     return (
         <div className="img-con flex align-center">
             <img src={img.imgUrl} alt={alt} />
-            <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" style={{ display: "none" }} />
+            <input type="file" onChange={uploadImg} accept="image/*" id="imgUpload" style={{ display: "none" }} />
             <label htmlFor="imgUpload" className="img-label">{uploadMsg()}</label>
         </div>
     )

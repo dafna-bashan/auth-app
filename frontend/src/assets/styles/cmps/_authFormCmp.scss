@@ -7,16 +7,16 @@
     width          : 100vw;
 
 
-
+    
     .form-container {
-
+        
         margin        : 0 auto;
         border        : 1px solid #BDBDBD;
         border-radius : 24px;
         display       : flex;
         flex-direction: column;
         padding       : 60px;
-
+        
         .main-title {
             font-size    : 18px;
             margin-bottom: 15px;
@@ -76,15 +76,15 @@
 }
 
 .error-con {
-    height: 40px;
+    height: 30px;
     width : 350px;
 }
 
 .error {
-    font-size    : 14px;
-    padding-left : 10px;
-    color        : red;
-    margin-bottom: 15px;
+    font-size       : 12px;
+    // padding-left : 10px;
+    color           : red;
+    margin-bottom   : 15px;
 }
 
 

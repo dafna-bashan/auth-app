@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './Loader';
@@ -18,12 +18,12 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
 
 
 
-    const handleChange = ({ target }) => {
-        const { name, value } = target
-        console.log(name, value);
-        setCredentials({ ...credentials, [name]: value })
-        // console.log(name, value, user)
-    }
+    // const handleChange = ({ target }) => {
+    //     const { name, value } = target
+    //     console.log(name, value);
+    //     setCredentials({ ...credentials, [name]: value })
+    //     // console.log(name, value, user)
+    // }
 
     const error = useSelector(state => state.errorModule.error)
     const isLoading = useSelector(state => state.systemModule.isLoading)
@@ -40,6 +40,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             delete data.newPassword
             setCredentials(data)
         }
+        // eslint-disable-next-line
     }, [isChangePass])
 
     const onSubmit = () => {
@@ -84,7 +85,8 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             }
             // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
             else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,20}$/.test(values.password)) {
-                errors.password = 'Use at least one number, one capital letter and one lower-case letter'
+                errors.password = 'Use at least 1 number, 1 capital letter and 1 lowercase letter'
+                // errors.password = 'Use at least one number, one capital letter and one lower-case letter'
             }
         }
         if (type === 'profile-edit' && isChangePass) {
@@ -93,18 +95,34 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             }
             // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
             else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,20}$/.test(values.newPassword)) {
-                errors.newPassword = 'Use at least one number, one capital letter and one lower-case letter'
+                errors.newPassword = 'Use at least 1 number, 1 capital letter and 1 lowercase letter'
+                // errors.newPassword = 'Use at least one number, one capital letter and one lower-case letter'
             }
         }
+
+        if (values.phone && !/^05[2-9]\d{7}$/.test(values.phone)) {
+            errors.phone = 'Please enter a valid israeli mobile phone number, use only digits'
+        }
+
         setCredentials(values)
-        // console.log(errors);
+        console.log(errors);
         return errors;
     }
 
     function onEnterPass(ev) {
-        console.log(ev.target.value.length);
+        // console.log(ev.target.value.length, ev.code);
         if (ev.code === 'Space') ev.preventDefault()
-        if (ev.target.value.length >= 21) ev.preventDefault()
+        // if (ev.target.value.length >= 20 && ev.code !== 'Backspace') ev.preventDefault()
+    }
+
+    function onEnterPhone(ev) {
+        const numericInput = ev.target.value.replace(/\D/g, "")
+        if (ev.target.value !== numericInput) {
+            ev.target.value = numericInput
+        }
+        // console.log(parseInt(ev.target.value));
+        // const isNum = +ev.target.value
+        // if (!/^\d+$/.test(+ev.target.value) && ev.code !== 'Backspace') ev.preventDefault()
     }
 
     function toggleChangePass({ target }) {
@@ -118,6 +136,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
 
     return (
         <div className="form-container">
+            {type !== 'profile-edit' && <div className="main-title">Auth app</div>}
             <div className="title">{title}</div>
             <Formik
                 initialValues={credentials}
@@ -126,12 +145,12 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                 <Form className="flex column">
                     {type !== 'login' &&
                         <React.Fragment>
-                            {type === 'profile-edit' && <label htmlFor="firstName">First Name</label>}
+                            {type === 'profile-edit' && <label htmlFor="firstName">* First Name</label>}
                             <Field type="text" name="firstName" placeholder="First name" />
                             <div className="error-con">
                                 <ErrorMessage name="firstName" component="div" className="error" />
                             </div>
-                            {type === 'profile-edit' && <label htmlFor="lastName">Last Name</label>}
+                            {type === 'profile-edit' && <label htmlFor="lastName">* Last Name</label>}
                             <Field type="text" name="lastName" placeholder="Last name" />
                             <div className="error-con">
                                 <ErrorMessage name="lastName" component="div" className="error" />
@@ -148,9 +167,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     {type === 'profile-edit' &&
                         <React.Fragment>
                             <label htmlFor="phone">Phone</label>
-                            <Field type="tel" name="phone" placeholder="Enter your mobile phone number" onKeyDown={onEnterPass} />
+                            <Field type="tel" name="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} />
                             <div className="error-con">
-                                <ErrorMessage name="mobile" component="div" className="error" />
+                                <ErrorMessage name="phone" component="div" className="error" />
                             </div>
                             <label htmlFor="bio">Bio</label>
                             <Field type="text" as="textarea" name="bio" cols="30" rows="5" maxLength="200" placeholder="Enter your bio" />
@@ -159,14 +178,14 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
                     {type !== 'profile-edit' | isChangePass ?
                         <React.Fragment>
-                            {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? 'Current password' : 'Password'}</label>}
+                            {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>}
                             <Field type="password" name="password" placeholder={type === 'profile-edit' ? "Enter your current password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                             <div className="error-con">
                                 <ErrorMessage name="password" component="div" className="error" />
                             </div>
                         </React.Fragment> : null}
                     {isChangePass && <React.Fragment>
-                        <label htmlFor="newPassword">New password</label>
+                        <label htmlFor="newPassword">* New password</label>
                         <Field type="password" name="newPassword" placeholder={type === 'profile-edit' ? "Enter your new password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                         <div className="error-con">
                             <ErrorMessage name="newPassword" component="div" className="error" />

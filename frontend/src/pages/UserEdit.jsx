@@ -42,6 +42,7 @@ export function UserEdit() {
         if (!loggedInUser) navigate('/login')
         if (isSuccessful && !error) navigate('/user')
         // console.log(loggedInUser)
+        // eslint-disable-next-line
     }, [isSuccessful, loggedInUser, navigate])
 
 
