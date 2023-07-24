@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { useDispatch, useSelector } from 'react-redux'
+import { loadUser } from '../store/actions/userActions'
 
 export function UserInfo() {
 
@@ -15,6 +16,9 @@ export function UserInfo() {
     //     console.log('logout')
     //     dispatch(logout())
     // }
+    useEffect(() => {
+        dispatch(loadUser(loggedInUser._id))
+    }, [])
 
     useEffect(() => {
         dispatch({ type: 'RESTART' })
