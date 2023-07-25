@@ -40,7 +40,11 @@ export function UserEdit() {
 
     useEffect(() => {
         if (!loggedInUser) navigate('/login')
-        if (isSuccessful && !error) navigate('/user')
+        if (isSuccessful && !error) {
+            dispatch({ type: 'RESTART' })
+            navigate('/user')
+        }
+
         // console.log(loggedInUser)
         // eslint-disable-next-line
     }, [isSuccessful, loggedInUser, navigate])

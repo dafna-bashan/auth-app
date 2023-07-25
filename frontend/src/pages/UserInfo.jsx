@@ -20,13 +20,14 @@ export function UserInfo() {
         dispatch(loadUser(loggedInUser._id))
     }, [])
 
-    useEffect(() => {
-        dispatch({ type: 'RESTART' })
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch({ type: 'RESTART' })
+    // }, [dispatch])
 
 
     useEffect(() => {
         if (!loggedInUser) navigate('/login')
+        else dispatch({ type: 'RESTART' })
     }, [loggedInUser, navigate])
 
 
