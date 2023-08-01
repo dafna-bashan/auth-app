@@ -50,7 +50,7 @@ export function UserEdit() {
     }, [isSuccessful, loggedInUser, navigate])
 
 
-    if (!loggedInUser) return <div></div>
+    if (!loggedInUser?._id) return <div></div>
 
     // const { firstName, lastName, bio = '', phone = '', imgUrl = userImg, email } = user
 

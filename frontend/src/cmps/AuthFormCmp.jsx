@@ -145,13 +145,21 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                 <Form className="flex column">
                     {type !== 'login' &&
                         <React.Fragment>
-                            {type === 'profile-edit' && <label htmlFor="firstName">* First Name</label>}
-                            <Field type="text" name="firstName" placeholder="First name" />
+                            <div className="label-count flex space-between">
+                                <label htmlFor="firstName">* First Name</label>
+                                {/* {type === 'profile-edit' && <label htmlFor="firstName">* First Name</label>} */}
+                                <span className="count">{credentials.firstName.length} / 50</span>
+                            </div>
+                            <Field type="text" name="firstName" maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="firstName" component="div" className="error" />
                             </div>
-                            {type === 'profile-edit' && <label htmlFor="lastName">* Last Name</label>}
-                            <Field type="text" name="lastName" placeholder="Last name" />
+                            <div className="label-count flex space-between">
+                                <label htmlFor="lastName">* Last Name</label>
+                                <span className="count">{credentials.lastName.length} / 50</span>
+                            </div>
+                            {/* {type === 'profile-edit' && <label htmlFor="lastName">* Last Name</label>} */}
+                            <Field type="text" name="lastName" maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="lastName" component="div" className="error" />
                             </div>
@@ -159,34 +167,51 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     }
                     {type !== 'profile-edit' &&
                         <React.Fragment>
-                            <Field type="email" name="email" placeholder="Email" onKeyDown={onEnterPass} />
+                            <div className="label-count flex space-between">
+                                <label htmlFor="email">* Email</label>
+                                <span className="count">{credentials.email?.length | 0} / 50</span>
+                            </div>
+                            <Field type="email" name="email" onKeyDown={onEnterPass} maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="email" component="div" className="error" />
                             </div>
                         </React.Fragment>}
                     {type === 'profile-edit' &&
                         <React.Fragment>
-                            <label htmlFor="phone">Phone</label>
+                            <div className="label-count flex space-between">
+                                <label htmlFor="phone">Phone</label>
+                                <span className="count">{credentials.phone.length} / 10</span>
+                            </div>
                             <Field type="tel" name="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} />
                             <div className="error-con">
                                 <ErrorMessage name="phone" component="div" className="error" />
                             </div>
-                            <label htmlFor="bio">Bio</label>
-                            <Field type="text" as="textarea" name="bio" cols="30" rows="5" maxLength="200" placeholder="Enter your bio" />
+                            <div className="label-count flex space-between">
+                                <label htmlFor="bio">Bio</label>
+                                <span className="count bio">{credentials.bio.length} / 200</span>
+                            </div>
+                            <Field type="text" as="textarea" name="bio" cols="30" rows="5" maxLength="200" />
                             {/* <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio"></textarea> */}
                         </React.Fragment>}
                     {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
                     {type !== 'profile-edit' | isChangePass ?
                         <React.Fragment>
-                            {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>}
-                            <Field type="password" name="password" placeholder={type === 'profile-edit' ? "Enter your current password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                            <div className="label-count flex space-between">
+                                <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>
+                                <span className="count">{credentials.password?.length | 0} / 20</span>
+                            </div>
+                            {/* {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>} */}
+                            <Field type="password" name="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                             <div className="error-con">
                                 <ErrorMessage name="password" component="div" className="error" />
                             </div>
                         </React.Fragment> : null}
                     {isChangePass && <React.Fragment>
-                        <label htmlFor="newPassword">* New password</label>
-                        <Field type="password" name="newPassword" placeholder={type === 'profile-edit' ? "Enter your new password" : "Password"} minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                        <div className="label-count flex space-between">
+                            <label htmlFor="newPassword">* New password</label>
+                            <span className="count">{credentials.newPassword?.length | 0} / 20</span>
+                        </div>
+                        <Field type="password" name="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                         <div className="error-con">
                             <ErrorMessage name="newPassword" component="div" className="error" />
                         </div>
@@ -195,7 +220,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     <button type="submit">{isLoading ? <Loader /> : btnTxt}</button>
                 </Form>
             </Formik>
-            <span>{bottomLine}</span>
+            <span className="bottom">{bottomLine}</span>
 
 
         </div>

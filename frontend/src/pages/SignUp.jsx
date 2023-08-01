@@ -16,7 +16,7 @@ export function SignUp() {
 
     useEffect(() => {
         console.log(loggedInUser)
-        if (loggedInUser) {
+        if (loggedInUser?._id) {
             console.log('signed in!');
             //if i try to go back it navigates me back to the users page, IS THIS A PROBLEM??
             navigate('/user')

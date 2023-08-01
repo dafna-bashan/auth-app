@@ -12,26 +12,17 @@ export function UserInfo() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    // const onLogout = () => {
-    //     console.log('logout')
-    //     dispatch(logout())
-    // }
     useEffect(() => {
         dispatch(loadUser(loggedInUser._id))
     }, [])
 
-    // useEffect(() => {
-    //     dispatch({ type: 'RESTART' })
-    // }, [dispatch])
-
-
     useEffect(() => {
-        if (!loggedInUser) navigate('/login')
+        if (!loggedInUser?._id) navigate('/login')
         else dispatch({ type: 'RESTART' })
     }, [loggedInUser, navigate])
 
 
-    if (!loggedInUser) return <div></div>
+    if (!loggedInUser?._id) return <div></div>
 
     const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
     return (
