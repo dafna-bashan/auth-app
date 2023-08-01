@@ -17,31 +17,13 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
     const [isChangePass, setIsChangePass] = useState(false)
 
 
-
-    // const handleChange = ({ target }) => {
-    //     const { name, value } = target
-    //     console.log(name, value);
-    //     setCredentials({ ...credentials, [name]: value })
-    //     // console.log(name, value, user)
-    // }
-
     const error = useSelector(state => state.errorModule.error)
     const isLoading = useSelector(state => state.systemModule.isLoading)
-    // const inputRef = useRef(null)
 
     useEffect(() => {
         dispatch({ type: 'REMOVE_ERROR' })
     }, [dispatch])
 
-    useEffect(() => {
-        if (!isChangePass) {
-            const data = { ...credentials }
-            delete data.password
-            delete data.newPassword
-            setCredentials(data)
-        }
-        // eslint-disable-next-line
-    }, [isChangePass])
 
     const onSubmit = () => {
         console.log('submitted!', credentials);
@@ -63,7 +45,6 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         const errors = {};
         if (type === 'signup' || type === "profile-edit") {
             if (!values.firstName) {
-                // if(document.activeElement === inputRef.current) 
                 errors.firstName = 'Required';
             }
             if (!values.lastName) {
@@ -89,17 +70,21 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                 // errors.password = 'Use at least one number, one capital letter and one lower-case letter'
             }
         }
-        if (type === 'profile-edit' && isChangePass) {
-            if (!/^.{8,20}$/.test(values.newPassword)) {
-                errors.newPassword = 'Use at least 8 characters'
-            }
-            // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
-            else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,20}$/.test(values.newPassword)) {
-                errors.newPassword = 'Use at least 1 number, 1 capital letter and 1 lowercase letter'
-                // errors.newPassword = 'Use at least one number, one capital letter and one lower-case letter'
+        if (type === 'profile-edit') {
+            if (isChangePass) {
+                if (!/^.{8,20}$/.test(values.newPassword)) {
+                    errors.newPassword = 'Use at least 8 characters'
+                }
+                // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
+                else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,20}$/.test(values.newPassword)) {
+                    errors.newPassword = 'Use at least 1 number, 1 capital letter and 1 lowercase letter'
+                    // errors.newPassword = 'Use at least one number, one capital letter and one lower-case letter'
+                }
+            } else {
+                delete values.password
+                delete values.newPassword
             }
         }
-
         if (values.phone && !/^05[2-9]\d{7}$/.test(values.phone)) {
             errors.phone = 'Please enter a valid israeli mobile phone number, use only digits'
         }
@@ -110,9 +95,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
     }
 
     function onEnterPass(ev) {
-        // console.log(ev.target.value.length, ev.code);
         if (ev.code === 'Space') ev.preventDefault()
-        // if (ev.target.value.length >= 20 && ev.code !== 'Backspace') ev.preventDefault()
     }
 
     function onEnterPhone(ev) {
@@ -120,13 +103,10 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         if (ev.target.value !== numericInput) {
             ev.target.value = numericInput
         }
-        // console.log(parseInt(ev.target.value));
-        // const isNum = +ev.target.value
-        // if (!/^\d+$/.test(+ev.target.value) && ev.code !== 'Backspace') ev.preventDefault()
     }
 
     function toggleChangePass({ target }) {
-        // console.log(target.checked);
+        console.log(target.checked);
         if (target.checked) {
             setIsChangePass(true)
         } else {
