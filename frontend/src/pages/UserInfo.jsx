@@ -4,6 +4,8 @@ import { NavBar } from '../cmps/NavBar'
 import userImg from '../assets/img/user-img.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadUser } from '../store/actions/userActions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 
 export function UserInfo() {
 
@@ -33,22 +35,26 @@ export function UserInfo() {
                     <div className="title">Personal info</div>
                     <div className="subtitle">Basic info, like your name and photo</div>
                 </div>
-                <div className="frame">
+                <div className="frame first">
                     <div className="profile-container flex align-center">
                         <div className="full">
-                            <div className="profile" style={{ marginLeft: 0 }}>Profile</div>
-                            <div className="profile-sub">Some info may be visible to other people</div>
+                            {/* <div className="profile" style={{ marginLeft: 0 }}>Profile</div>
+                            <div className="profile-sub">Some info may be visible to other people</div> */}
+                            <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
+                            <div className="name">{firstName} {lastName}</div>
                         </div>
-                        <Link to="/user/edit" className="edit">Edit</Link>
+                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" /></Link>
                     </div>
-                    <div className="field img-con">
+                    {/* <div className="field img-con">
                         <div>PHOTO</div>
                         <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
                     </div>
                     <div className="field">
                         <div>NAME</div>
                         <div>{firstName} {lastName}</div>
-                    </div>
+                    </div> */}
+                </div>
+                <div className="frame">
                     <div className="field">
                         <div>EMAIL</div>
                         <div>{email}</div>

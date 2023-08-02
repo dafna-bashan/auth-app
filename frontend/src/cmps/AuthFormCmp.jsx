@@ -202,7 +202,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             <div className="label-count flex space-between">
                                 <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>
                                 <div>
-                                    <FontAwesomeIcon icon={isPasswordVisible.password ? faEye : faEyeSlash} onClick={() => togglePassVisibility("password")} />
+                                    <FontAwesomeIcon className="eye" icon={isPasswordVisible.password ? faEye : faEyeSlash} onClick={() => togglePassVisibility("password")} />
                                     <span className="count password">{password?.length | 0} / 20</span>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                         <div className="label-count flex space-between">
                             <label htmlFor="newPassword">* New password</label>
                             <div>
-                                <FontAwesomeIcon icon={isPasswordVisible.newPassword ? faEye : faEyeSlash} onClick={() => togglePassVisibility("newPassword")} />
+                                <FontAwesomeIcon className="eye" icon={isPasswordVisible.newPassword ? faEye : faEyeSlash} onClick={() => togglePassVisibility("newPassword")} />
                                 <span className="count password">{newPassword?.length | 0} / 20</span>
                             </div>
                         </div>
@@ -227,7 +227,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             <ErrorMessage name="newPassword" component="div" className="error" />
                         </div>
                     </React.Fragment>}
-                    {error && <div className="error">{error}</div>}
+                    <div className="error-con">
+                        {error && <div className="error">{error}</div>}
+                    </div>
                     <button type="submit">{isLoading ? <Loader /> : btnTxt}</button>
                 </Form>
             </Formik>

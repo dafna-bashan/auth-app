@@ -1168,3 +1168,13 @@
 8/1/2023, 2:33:05 PM - DEBUG - auth.route - new account created: {"email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","password":"$2b$10$XaCiQbFnYpffqXWgESD9aOIHx40DB5ZCyNevIyN4zCTd4Gsdcirke","bio":"","phone":"","imgUrl":"","_id":"64c8ed71704b9114ec38db8d"} 
 8/1/2023, 2:33:05 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
 8/1/2023, 2:34:21 PM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bla bla","phone":"0520000000","imgUrl":""} 
+8/2/2023, 9:57:21 AM - DEBUG - auth.service - signup with email: dafnaba1@gmail.com, fullname: דפנה בשן 
+8/2/2023, 9:57:22 AM - ERROR - Failed to signup email already exists 
+8/2/2023, 9:58:25 AM - DEBUG - auth.service - signup with email: dafnaba1@gmail.com, fullname: דפנה בשן 
+8/2/2023, 9:58:25 AM - ERROR - Failed to signup email already exists 
+8/2/2023, 9:59:19 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+8/2/2023, 9:59:20 AM - DEBUG - auth.service - login with email: dafnaba1@gmail.com, wrong password 
+8/2/2023, 9:59:20 AM - ERROR - Failed to Login Invalid email or password 
+8/2/2023, 10:01:03 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bla bla","phone":"0520000000","imgUrl":""} 
+8/2/2023, 10:21:22 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bla bla","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png"} 
+8/2/2023, 10:21:43 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png"} 

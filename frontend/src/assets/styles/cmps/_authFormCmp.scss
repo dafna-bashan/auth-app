@@ -93,10 +93,12 @@
 }
 
 .svg-inline--fa {
-    position: relative;
-    right   : 25px;
-    top     : 36px;
-    width   : fit-content;
+    &.eye {
+        position: relative;
+        right   : 25px;
+        top     : 36px;
+        width   : fit-content;
+    }
 
 }
 

@@ -2,8 +2,18 @@
 
     margin-bottom: 30px;
 
-    .frame>*:not(:last-child) {
-        border-bottom: 1px solid #D3D3D3;
+    .frame {
+
+        background-color: #f9f9f9;
+
+        &.first {
+            margin-bottom: 15px;
+        }
+
+        >*:not(:last-child) {
+            border-bottom: 1px solid #D3D3D3;
+        }
+
     }
 
 
@@ -21,11 +31,29 @@
     }
 
     .profile-container {
-        height: 115px;
+        // height: 150px;
+        padding: 30px 0;
 
-        :first-child {
-            width      : 280px;
+        div:first-child {
             margin-left: 49px;
+        }
+
+        .name {
+            font-size     : 24px;
+            font-family   : noto-sans-500;
+            // margin-left: 88px;
+        }
+
+        img {
+            width           : 150px;
+            height          : 150px;
+            // margin       : 15px 0;
+            border-radius   : 150px;
+        }
+
+        a {
+            align-self  : flex-start;
+            margin-right: 30px;
         }
     }
 
@@ -35,12 +63,13 @@
         height     : 73px;
 
         :first-child {
-            width      : 280px;
-            margin-left: 49px;
-            font-family: noto-sans-500;
-            font-size  : 13px;
-            line-height: 18px;
-            color      : #BDBDBD;
+            width         : 280px;
+            margin-left   : 49px;
+            font-family   : noto-sans-500;
+            font-size     : 13px;
+            line-height   : 18px;
+            // color      : #BDBDBD;
+            color         : #9d9d9d;
         }
 
         :last-child {
@@ -55,23 +84,22 @@
             height    : fit-content;
             padding   : 15px 0;
         }
+
+
     }
 
 
 
-    .edit {
-        font-family  : noto-sans-500;
-        border       : 1px solid #828282;
-        border-radius: 12px;
-        padding      : 6px 34px;
-        margin-right : 49px;
-    }
+    // .edit {
+    //     font-family  : noto-sans-500;
+    //     border       : 1px solid #828282;
+    //     border-radius: 12px;
+    //     padding      : 6px 34px;
+    //     margin-right : 49px;
+    // align-self: flex-start;
+    // }
 
-    img {
-        width : 72px;
-        height: 72px;
-        margin: 15px 0;
-    }
+
 
     .img-con {
         height: 100px;
@@ -105,10 +133,14 @@
 
     .user-info {
 
+        .frame {
+            background-color: transparent;
+        }
+
         .field {
             justify-content: space-between;
 
-            :first-child {
+            div:first-child {
                 width      : 100px;
                 margin-left: 23px;
             }
@@ -132,15 +164,20 @@
         }
 
         .profile-container {
-            :first-child {
+            div:first-child {
                 width      : auto;
                 margin-left: 23px;
             }
 
-            :last-child {
+            *> :last-child {
                 margin-right: 23px;
             }
+
+            a {
+                margin-right: 0;
+            }
         }
+
     }
 
 }
