@@ -3,6 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './Loader';
 import Checkbox from '@mui/joy/Checkbox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 
 export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user }) {
 
@@ -12,10 +14,13 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         firstName: user?.firstName || '',
         lastName: user?.lastName || '',
         bio: user?.bio || '',
-        phone: user?.phone || ''
+        phone: user?.phone || '',
     })
     const [isChangePass, setIsChangePass] = useState(false)
-
+    const [isPasswordVisible, setIsPasswordVisible] = useState({
+        password: false,
+        newPassword: false
+    })
 
     const error = useSelector(state => state.errorModule.error)
     const isLoading = useSelector(state => state.systemModule.isLoading)
@@ -24,6 +29,24 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         dispatch({ type: 'REMOVE_ERROR' })
     }, [dispatch])
 
+    function togglePassVisibility(passName) {
+        if (isPasswordVisible[passName]) {
+            setIsPasswordVisible({ ...isPasswordVisible, [passName]: false })
+        } else setIsPasswordVisible({ ...isPasswordVisible, [passName]: true })
+    }
+    // useEffect(() => {
+    //     if (!isChangePass) {
+    //         const data = { ...credentials }
+    //         delete data.password
+    //         delete data.newPassword
+    //         setCredentials(data)
+    //     }
+    // }, [isChangePass])
+
+    // function handleChange({ target }) {
+    //     const { name, value } = target
+    //     setCredentials({ ...credentials, [name]: value })
+    // }
 
     const onSubmit = () => {
         console.log('submitted!', credentials);
@@ -37,7 +60,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
 
 
     const validate = (values) => {
-        // console.log("MyForm ~ values", values)
+        console.log("MyForm ~ values", values)
         if (isSubmiting) {
             dispatch({ type: 'REMOVE_ERROR' })
             setIsSubmiting(false)
@@ -113,7 +136,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             setIsChangePass(false)
         }
     }
-
+    const { firstName, lastName, bio, phone, email, password, newPassword } = credentials
     return (
         <div className="form-container">
             {type !== 'profile-edit' && <div className="main-title">Auth app</div>}
@@ -128,18 +151,18 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             <div className="label-count flex space-between">
                                 <label htmlFor="firstName">* First Name</label>
                                 {/* {type === 'profile-edit' && <label htmlFor="firstName">* First Name</label>} */}
-                                <span className="count">{credentials.firstName.length} / 50</span>
+                                <span className="count">{firstName.length} / 50</span>
                             </div>
-                            <Field type="text" name="firstName" maxLength="50" />
+                            <Field type="text" name="firstName" id="firstName" maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="firstName" component="div" className="error" />
                             </div>
                             <div className="label-count flex space-between">
                                 <label htmlFor="lastName">* Last Name</label>
-                                <span className="count">{credentials.lastName.length} / 50</span>
+                                <span className="count">{lastName.length} / 50</span>
                             </div>
                             {/* {type === 'profile-edit' && <label htmlFor="lastName">* Last Name</label>} */}
-                            <Field type="text" name="lastName" maxLength="50" />
+                            <Field type="text" name="lastName" id="lastName" maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="lastName" component="div" className="error" />
                             </div>
@@ -149,9 +172,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                         <React.Fragment>
                             <div className="label-count flex space-between">
                                 <label htmlFor="email">* Email</label>
-                                <span className="count">{credentials.email?.length | 0} / 50</span>
+                                <span className="count">{email?.length | 0} / 50</span>
                             </div>
-                            <Field type="email" name="email" onKeyDown={onEnterPass} maxLength="50" />
+                            <Field type="email" name="email" id="email" onKeyDown={onEnterPass} maxLength="50" />
                             <div className="error-con">
                                 <ErrorMessage name="email" component="div" className="error" />
                             </div>
@@ -160,17 +183,17 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                         <React.Fragment>
                             <div className="label-count flex space-between">
                                 <label htmlFor="phone">Phone</label>
-                                <span className="count">{credentials.phone.length} / 10</span>
+                                <span className="count">{phone.length} / 10</span>
                             </div>
-                            <Field type="tel" name="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} />
+                            <Field type="tel" name="phone" id="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} />
                             <div className="error-con">
                                 <ErrorMessage name="phone" component="div" className="error" />
                             </div>
                             <div className="label-count flex space-between">
                                 <label htmlFor="bio">Bio</label>
-                                <span className="count bio">{credentials.bio.length} / 200</span>
+                                <span className="count bio">{bio.length} / 200</span>
                             </div>
-                            <Field type="text" as="textarea" name="bio" cols="30" rows="5" maxLength="200" />
+                            <Field type="text" as="textarea" name="bio" id="bio" cols="30" rows="5" maxLength="200" />
                             {/* <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio"></textarea> */}
                         </React.Fragment>}
                     {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
@@ -178,10 +201,14 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                         <React.Fragment>
                             <div className="label-count flex space-between">
                                 <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>
-                                <span className="count">{credentials.password?.length | 0} / 20</span>
+                                <div>
+                                    <FontAwesomeIcon icon={isPasswordVisible.password ? faEye : faEyeSlash} onClick={() => togglePassVisibility("password")} />
+                                    <span className="count password">{password?.length | 0} / 20</span>
+                                </div>
                             </div>
                             {/* {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>} */}
-                            <Field type="password" name="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                            {/* <span onClick={() => togglePassVisibility("password")}>toggle</span> */}
+                            <Field type={isPasswordVisible.password ? "text" : "password"} name="password" id="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                             <div className="error-con">
                                 <ErrorMessage name="password" component="div" className="error" />
                             </div>
@@ -189,9 +216,13 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     {isChangePass && <React.Fragment>
                         <div className="label-count flex space-between">
                             <label htmlFor="newPassword">* New password</label>
-                            <span className="count">{credentials.newPassword?.length | 0} / 20</span>
+                            <div>
+                                <FontAwesomeIcon icon={isPasswordVisible.newPassword ? faEye : faEyeSlash} onClick={() => togglePassVisibility("newPassword")} />
+                                <span className="count password">{newPassword?.length | 0} / 20</span>
+                            </div>
                         </div>
-                        <Field type="password" name="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                        {/* <span onClick={() => togglePassVisibility("newPassword")}>toggle</span> */}
+                        <Field type={isPasswordVisible.newPassword ? "text" : "password"} name="newPassword" id="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
                         <div className="error-con">
                             <ErrorMessage name="newPassword" component="div" className="error" />
                         </div>

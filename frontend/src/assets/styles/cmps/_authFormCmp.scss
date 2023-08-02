@@ -89,6 +89,15 @@
         }
 
     }
+
+}
+
+.svg-inline--fa {
+    position: relative;
+    right   : 25px;
+    top     : 36px;
+    width   : fit-content;
+
 }
 
 .label-count {
@@ -105,6 +114,11 @@
 
     &.bio {
         top: 110px;
+    }
+
+    &.password {
+        right: 15px;
+
     }
 }
 
