@@ -5,6 +5,8 @@ import { Loader } from './Loader';
 import Checkbox from '@mui/joy/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import Autocomplete from "react-google-autocomplete";
+import { usePlacesWidget } from "react-google-autocomplete";
 
 export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user }) {
 
@@ -15,6 +17,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         lastName: user?.lastName || '',
         bio: user?.bio || '',
         phone: user?.phone || '',
+        address: user?.address || ''
     })
     const [isChangePass, setIsChangePass] = useState(false)
     const [isPasswordVisible, setIsPasswordVisible] = useState({
@@ -24,6 +27,14 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
 
     const error = useSelector(state => state.errorModule.error)
     const isLoading = useSelector(state => state.systemModule.isLoading)
+
+    // const { ref, autocompleteRef } = usePlacesWidget({
+    //     apiKey:"AIzaSyDVtYUw2ARdt5BTtFCdWRFRNyrlFtGvYC8",
+    //     onPlaceSelected: (place) => {
+    //       console.log(place);
+    //     }
+    //   });
+
 
     useEffect(() => {
         dispatch({ type: 'REMOVE_ERROR' })
@@ -43,10 +54,14 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
     //     }
     // }, [isChangePass])
 
-    // function handleChange({ target }) {
-    //     const { name, value } = target
-    //     setCredentials({ ...credentials, [name]: value })
-    // }
+    function handleChange({ target }) {
+        const { name, value } = target
+        setCredentials({ ...credentials, [name]: value })
+    }
+
+    useEffect(() => {
+        console.log(credentials);
+    }, [credentials])
 
     const onSubmit = () => {
         console.log('submitted!', credentials);
@@ -112,7 +127,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             errors.phone = 'Please enter a valid israeli mobile phone number, use only digits'
         }
 
-        setCredentials(values)
+        setCredentials({ ...values, address: credentials.address })
         console.log(errors);
         return errors;
     }
@@ -136,7 +151,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             setIsChangePass(false)
         }
     }
-    const { firstName, lastName, bio, phone, email, password, newPassword } = credentials
+    const { firstName, lastName, bio, phone, address, email, password, newPassword } = credentials
     return (
         <div className="form-container">
             {type !== 'profile-edit' && <div className="main-title">Auth app</div>}
@@ -189,6 +204,22 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             <div className="error-con">
                                 <ErrorMessage name="phone" component="div" className="error" />
                             </div>
+                            <label htmlFor="address">Address</label>
+                            <Autocomplete id="address" apiKey="AIzaSyDVtYUw2ARdt5BTtFCdWRFRNyrlFtGvYC8" name="address"
+                                onPlaceSelected={(place) => {
+                                    console.log(place);
+                                    setCredentials({ ...credentials, address: place.formatted_address })
+                                }} defaultValue={address}
+                                style={{ 'marginBottom': 24 }}
+                                options={{
+                                    // types: ["(regions)"],
+                                    types: ["address"],
+                                    // componentRestrictions: { country: "ru" },
+                                }}
+                                language="en"
+                                // defaultValue="Amsterdam"
+                                placeholder=""
+                            />
                             <div className="label-count flex space-between">
                                 <label htmlFor="bio">Bio</label>
                                 <span className="count bio">{bio.length} / 200</span>

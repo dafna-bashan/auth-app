@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import userImg from '../assets/img/user-img.png'
+import userImg from '../assets/img/noun-user-103879.png'
 import { UserManu } from './UserManu'
 
 export function NavBar({ onLogout }) {

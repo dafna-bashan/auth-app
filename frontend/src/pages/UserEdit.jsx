@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
-import userImg from '../assets/img/user-img.png'
+import userImg from '../assets/img/noun-user-103879.png'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from '../store/actions/userActions'

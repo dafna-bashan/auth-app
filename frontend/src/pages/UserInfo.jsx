@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { NavBar } from '../cmps/NavBar'
-import userImg from '../assets/img/user-img.png'
+import userImg from '../assets/img/noun-user-103879.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadUser } from '../store/actions/userActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -26,7 +26,7 @@ export function UserInfo() {
 
     if (!loggedInUser?._id) return <div></div>
 
-    const { firstName, lastName, bio, phone, imgUrl = userImg, email } = loggedInUser
+    const { firstName, lastName, bio, phone, address, imgUrl = userImg, email } = loggedInUser
     return (
         <React.Fragment>
             <NavBar />
@@ -43,7 +43,7 @@ export function UserInfo() {
                             <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
                             <div className="name">{firstName} {lastName}</div>
                         </div>
-                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" /></Link>
+                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#b8b8b8",}} /></Link>
                     </div>
                     {/* <div className="field img-con">
                         <div>PHOTO</div>
@@ -59,14 +59,19 @@ export function UserInfo() {
                         <div>EMAIL</div>
                         <div>{email}</div>
                     </div>
-                    <div className="field bio">
-                        <div>BIO</div>
-                        <div>{bio}</div>
-                    </div>
                     <div className="field">
                         <div>PHONE</div>
                         <div>{phone}</div>
                     </div>
+                    <div className="field">
+                        <div>ADDRESS</div>
+                        <div>{address}</div>
+                    </div>
+                    <div className="field bio">
+                        <div>BIO</div>
+                        <div>{bio}</div>
+                    </div>
+
                 </div>
             </div>
         </React.Fragment>

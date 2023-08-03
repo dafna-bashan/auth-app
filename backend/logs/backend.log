@@ -1178,3 +1178,14 @@
 8/2/2023, 10:01:03 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bla bla","phone":"0520000000","imgUrl":""} 
 8/2/2023, 10:21:22 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"bla bla","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png"} 
 8/2/2023, 10:21:43 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png"} 
+8/3/2023, 10:21:54 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla111","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png","address":"ארלוזורוב, תל אביב-יפו, ישראל"} 
+8/3/2023, 11:27:29 AM - DEBUG - update user {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla111","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/3/2023, 11:41:04 AM - DEBUG - auth.service - signup with email: dafnaba12@gmail.com, fullname: דפנה בשן 
+8/3/2023, 11:41:04 AM - ERROR - Failed to signup email already exists 
+8/3/2023, 11:41:09 AM - DEBUG - auth.service - signup with email: dafnaba123@gmail.com, fullname: דפנה בשן 
+8/3/2023, 11:41:10 AM - DEBUG - auth.service - signup with email: dafnaba123@gmail.com, pass:123456Db, hash: $2b$10$y27h5nGS6HDHRW3vCvmgIeoNyP.pDWWmftir5SRzysPBHLURnG05. 
+8/3/2023, 11:41:10 AM - DEBUG - auth.route - new account created: {"email":"dafnaba123@gmail.com","firstName":"דפנה","lastName":"בשן","password":"$2b$10$y27h5nGS6HDHRW3vCvmgIeoNyP.pDWWmftir5SRzysPBHLURnG05.","bio":"","phone":"","imgUrl":"","_id":"64cb6826704b9114ec38db8e"} 
+8/3/2023, 11:41:10 AM - DEBUG - auth.service - login with email: dafnaba123@gmail.com 
+8/3/2023, 11:43:46 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"","phone":"","imgUrl":"","address":""} 
+8/3/2023, 11:52:21 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/3/2023, 11:52:34 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 

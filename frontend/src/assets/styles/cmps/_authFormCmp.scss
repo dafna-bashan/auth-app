@@ -12,6 +12,7 @@
 
         margin        : 0 auto;
         border        : 1px solid #BDBDBD;
+        box-shadow: 3px 3px 7px 0px rgba(145,145,145,0.75);
         border-radius : 24px;
         display       : flex;
         flex-direction: column;
@@ -44,6 +45,7 @@
             // width              : 415px;
 
         }
+
 
         .MuiCheckbox-root {
             margin-bottom: 24px;
