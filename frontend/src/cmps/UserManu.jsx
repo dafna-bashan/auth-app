@@ -15,7 +15,7 @@ export function UserManu({ closeFunc }) {
     return (
         <div className="user-manu" onClick={closeFunc}>
             <div>My Profile</div>
-            <div>Group Chat</div>
+            <div>Main app (demo)</div>
             <div></div>
             <div onClick={onLogout}>Logout</div>
         </div>

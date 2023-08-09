@@ -1189,3 +1189,26 @@
 8/3/2023, 11:43:46 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"","phone":"","imgUrl":"","address":""} 
 8/3/2023, 11:52:21 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
 8/3/2023, 11:52:34 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/6/2023, 3:43:20 PM - DEBUG - auth.service - login with email: dafnaba1@gmail.com 
+8/6/2023, 3:43:20 PM - INFO - User login:  | {"_id":"64c8ed71704b9114ec38db8d","email":"dafnaba1@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla111","phone":"0520000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1690960878/noun-user-group_swm973.png","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/7/2023, 2:23:15 PM - DEBUG - auth.service - signup with email: daf@gmail.com, fullname: daf daf 
+8/7/2023, 2:23:15 PM - DEBUG - auth.service - signup with email: daf@gmail.com, pass:123456Db, hash: $2b$10$DN4HZZKetjycMKGP9Z0hreAZjCt7Zo8rOqZvaYBTLsZISuyfuro6y 
+8/7/2023, 2:23:15 PM - DEBUG - auth.route - new account created: {"email":"daf@gmail.com","firstName":"daf","lastName":"daf","password":"$2b$10$DN4HZZKetjycMKGP9Z0hreAZjCt7Zo8rOqZvaYBTLsZISuyfuro6y","bio":"","phone":"","imgUrl":"","_id":"64d0d423704b9114ec38db8f"} 
+8/7/2023, 2:23:15 PM - DEBUG - auth.service - login with email: daf@gmail.com 
+8/7/2023, 2:24:19 PM - DEBUG - update user {"_id":"64d0d423704b9114ec38db8f","email":"daf@gmail.com","firstName":"daf","lastName":"daf","bio":"","phone":"0520000000","imgUrl":"","address":""} 
+8/7/2023, 2:24:51 PM - DEBUG - update user {"_id":"64d0d423704b9114ec38db8f","email":"daf@gmail.com","firstName":"daf","lastName":"daf","bio":"la la la","phone":"0520000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/7/2023, 2:50:25 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel"} 
+8/9/2023, 2:16:10 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","password":"","newPassword":""} 
+8/9/2023, 2:24:21 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","password":"hgffdsdffdsf","newPassword":"hghgfdsfsf"} 
+8/9/2023, 2:24:21 PM - DEBUG - user.service - update user: dafnaba123@gmail.com, wrong password 
+8/9/2023, 2:24:21 PM - ERROR - Failed to update user | invalid password 
+8/9/2023, 2:29:21 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","password":"","newPassword":""} 
+8/9/2023, 2:41:30 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Mordechai Namir Rd, Tel Aviv-Yafo, Israel","newPassword":"","password":""} 
+8/9/2023, 2:46:09 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 
+8/9/2023, 2:51:05 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 
+8/9/2023, 3:09:55 PM - DEBUG - auth.service - login with email: dshjk@rwjekn.vgd 
+8/9/2023, 3:09:55 PM - DEBUG - auth.service - login with email: dshjk@rwjekn.vgd, wrong email 
+8/9/2023, 3:09:55 PM - ERROR - Failed to Login Invalid email or password 
+8/9/2023, 3:12:50 PM - ERROR - Failed to signup TypeError: Cannot read properties of undefined (reading 'toLowerCase') 
+8/9/2023, 3:25:38 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 
+8/9/2023, 3:28:51 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 

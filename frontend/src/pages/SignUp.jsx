@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { AuthFormCmp } from '../cmps/AuthFormCmp'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { signup } from '../store/actions/authActions'
+import { FormAuth } from '../cmps/FormAuth'
 
 export function SignUp() {
 
@@ -18,7 +18,6 @@ export function SignUp() {
         console.log(loggedInUser)
         if (loggedInUser?._id) {
             console.log('signed in!');
-            //if i try to go back it navigates me back to the users page, IS THIS A PROBLEM??
             navigate('/user')
         }
     }, [loggedInUser, navigate])
@@ -30,7 +29,7 @@ export function SignUp() {
 
     return (
         <div className="auth-container">
-            <AuthFormCmp type="signup" title="Join us!" btnTxt="Register" submitFunc={onSignUp} bottomLine={bottomLine} />
+            <FormAuth type="signup" title="Join us!" btnTxt="Register" submitFunc={onSignUp} bottomLine={bottomLine} />
         </div>
     )
 }

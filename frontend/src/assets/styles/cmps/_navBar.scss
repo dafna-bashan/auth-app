@@ -1,19 +1,51 @@
 .nav-bar {
-    width              : 100vw;
-    padding            : 20px 72px;
-    position           : fixed;
-    top                : 0;
-    right              : 0;
-    background-color   : #fff;
+    width                    : 100vw;
+    padding                  : 20px 72px;
+    position                 : fixed;
+    top                      : 0;
+    right                    : 0;
+    // padding-bottom        : 40px;
+    // background-color         : #fff;
+    // background-color   : #3f51b5;
     // box-shadow      : 0px 0px 5px 0px rgba(145, 145, 145, 0.75);
-    border-bottom      : 1px solid #E0E0E0;
-    z-index            : 1;
+    // box-shadow      : 0px 0px 5px 0px #3f51b5;
+    // border-bottom      : 1px solid #3f51b5;
 
-    img {
-        height       : 32px;
-        width        : 32px;
-        margin-right : 10px;
-        border-radius: 32px;
+
+    // border-bottom      : 1px solid #E0E0E0;
+    z-index              : 2;
+    color                : white;
+    // background-image     : url('../../img/m3.png');
+    background-image     : url('../../img/m4.png');
+
+    // background-size   :90px 100vw;
+    // background-size      : cover;
+
+
+    .user-img {
+        height          : 32px;
+        width           : 32px;
+        margin-right    : 10px;
+        border-radius   : 32px;
+        background-color: #fff;
+    }
+
+    .cover {
+        width   : 100%;
+        position: fixed;
+        top     : 0;
+        right   : 0;
+        z-index : -1;
+        height  : 80px;
+    }
+
+    .cover-bg {
+        width      : 100%;
+        position   : fixed;
+        top        : 50px;
+        right      : 0;
+        z-index    : -2;
+        // height  : 90px;
     }
 
     .user {
@@ -36,6 +68,12 @@
 @media (max-width: $narrow-breakpoint) {
     .nav-bar {
         padding: 23px;
+
+        .cover {
+            width: auto;
+
+            // height  : 80px;
+        }
 
         .username {
             display: none;

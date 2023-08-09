@@ -32,7 +32,7 @@ export function ImgUpload({ defaultImgUrl, alt, onUploadImg }) {
 
     return (
         <div className="img-con flex align-center">
-            <img src={img.imgUrl} alt={alt} />
+            <img className="upload" src={img.imgUrl} alt={alt} />
             <input type="file" onChange={uploadImg} accept="image/*" id="imgUpload" style={{ display: "none" }} />
             <label htmlFor="imgUpload" className="img-label">{uploadMsg()}</label>
         </div>

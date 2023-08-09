@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './Loader';
@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import Autocomplete from "react-google-autocomplete";
 import { usePlacesWidget } from "react-google-autocomplete";
+import bgcImg from '../assets/img/m1.png'
+
 
 export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user }) {
 
@@ -28,13 +30,8 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
     const error = useSelector(state => state.errorModule.error)
     const isLoading = useSelector(state => state.systemModule.isLoading)
 
-    // const { ref, autocompleteRef } = usePlacesWidget({
-    //     apiKey:"AIzaSyDVtYUw2ARdt5BTtFCdWRFRNyrlFtGvYC8",
-    //     onPlaceSelected: (place) => {
-    //       console.log(place);
-    //     }
-    //   });
-
+    const passRef = useRef(null)
+    const newPassRef = useRef(null)
 
     useEffect(() => {
         dispatch({ type: 'REMOVE_ERROR' })
@@ -45,12 +42,22 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             setIsPasswordVisible({ ...isPasswordVisible, [passName]: false })
         } else setIsPasswordVisible({ ...isPasswordVisible, [passName]: true })
     }
+    useEffect(() => {
+        console.log(passRef.current, newPassRef.current);
+        if (!isChangePass) {
+            const data = { ...credentials }
+            delete data.password
+            delete data.newPassword
+            setCredentials(data)
+            validate(data)
+
+        }
+    }, [isChangePass])
+
     // useEffect(() => {
     //     if (!isChangePass) {
-    //         const data = { ...credentials }
-    //         delete data.password
-    //         delete data.newPassword
-    //         setCredentials(data)
+    //         console.log(credentials);
+    //         validate(credentials)
     //     }
     // }, [isChangePass])
 
@@ -74,8 +81,8 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
     // OPTIONAL TODO - remove formik, check only the active input and change only the relevant field in the state.
 
 
-    const validate = (values) => {
-        console.log("MyForm ~ values", values)
+    function validate(values) {
+        // console.log("MyForm ~ values", values)
         if (isSubmiting) {
             dispatch({ type: 'REMOVE_ERROR' })
             setIsSubmiting(false)
@@ -99,7 +106,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
             }
         }
         if (type !== 'profile-edit' || isChangePass) {
-            if (!/^.{8,20}$/.test(values.password)) {
+            if (!values.password) {
+                errors.password = 'Required'
+            } else if (!/^.{8,20}$/.test(values.password)) {
                 errors.password = 'Use at least 8 characters'
             }
             // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
@@ -110,7 +119,9 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         }
         if (type === 'profile-edit') {
             if (isChangePass) {
-                if (!/^.{8,20}$/.test(values.newPassword)) {
+                if (!values.newPassword) {
+                    errors.newPassword = 'Required'
+                } else if (!/^.{8,20}$/.test(values.newPassword)) {
                     errors.newPassword = 'Use at least 8 characters'
                 }
                 // else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(values.password)) 
@@ -119,8 +130,12 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                     // errors.newPassword = 'Use at least one number, one capital letter and one lower-case letter'
                 }
             } else {
+                console.log('deleting');
                 delete values.password
                 delete values.newPassword
+                delete errors.password
+                delete errors.newPassword
+
             }
         }
         if (values.phone && !/^05[2-9]\d{7}$/.test(values.phone)) {
@@ -148,12 +163,16 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
         if (target.checked) {
             setIsChangePass(true)
         } else {
+            if (passRef.current) passRef.current.value = ''
+            if (newPassRef.current) newPassRef.current.value = ''
             setIsChangePass(false)
+            console.log('false', passRef, newPassRef);
         }
     }
     const { firstName, lastName, bio, phone, address, email, password, newPassword } = credentials
     return (
         <div className="form-container">
+            {type !== 'profile-edit' && <img className="bgc-img" src={bgcImg} alt="" />}
             {type !== 'profile-edit' && <div className="main-title">Auth app</div>}
             <div className="title">{title}</div>
             <Formik
@@ -239,7 +258,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             </div>
                             {/* {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>} */}
                             {/* <span onClick={() => togglePassVisibility("password")}>toggle</span> */}
-                            <Field type={isPasswordVisible.password ? "text" : "password"} name="password" id="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                            <Field type={isPasswordVisible.password ? "text" : "password"} name="password" id="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} ref={passRef} />
                             <div className="error-con">
                                 <ErrorMessage name="password" component="div" className="error" />
                             </div>
@@ -253,7 +272,7 @@ export function AuthFormCmp({ type, title, btnTxt, submitFunc, bottomLine, user 
                             </div>
                         </div>
                         {/* <span onClick={() => togglePassVisibility("newPassword")}>toggle</span> */}
-                        <Field type={isPasswordVisible.newPassword ? "text" : "password"} name="newPassword" id="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} />
+                        <Field type={isPasswordVisible.newPassword ? "text" : "password"} name="newPassword" id="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} ref={newPassRef} />
                         <div className="error-con">
                             <ErrorMessage name="newPassword" component="div" className="error" />
                         </div>

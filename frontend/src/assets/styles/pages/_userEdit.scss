@@ -2,12 +2,8 @@
     padding      : 30px 48px;
     margin-top   : 125px;
     margin-bottom: 30px;
-
-    img {
-        width       : 72px;
-        height      : 72px;
-        margin-right: 27px;
-    }
+    position     : relative;
+    z-index      : 0;
 
     form {
         font-family: noto-sans-500;
@@ -28,9 +24,6 @@
         margin-bottom: 25px;
     }
 
-    .img-con {
-        margin-bottom: 32px;
-    }
 
     input,
     textarea {
@@ -53,8 +46,9 @@
     }
 
     button {
-        height       : 38px;
-        background   : #2F80ED;
+        height          : 38px;
+        // background   : #2F80ED;
+        background      : #3f51b5;
         font-size    : 16px;
         line-height  : 22px;
         border-radius: 8px;
@@ -63,11 +57,25 @@
         font-weight  : 500;
         color        : #FFFFFF;
         padding      : 8px 0px;
+        &:disabled {
+            background      : #7b88d6;
+            cursor : auto;
+        }
     }
 
     .error-con {
         width: 100%;
     }
+}
+
+.cover-bg {
+    width      : 100%;
+    position   : fixed;
+    top        : 0;
+    right      : 0;
+    z-index    : -2;
+    opacity    : 80%;
+    // height  : 90px;
 }
 
 .back {
@@ -77,9 +85,10 @@
     top        : -70px;
     left       : -40px;
 
-    a {
-        color: #2D9CDB;
-    }
+    // a {
+        // color: #3f51b5;
+        
+    // }
 
     span {
         margin-right: 14px;
@@ -95,6 +104,11 @@
             top : -35px;
         }
     }
+
+    .cover-bg {
+        height: 240px;
+    }
+
 }
 
 @media (max-width: $mobile-breakpoint) {
@@ -108,4 +122,8 @@
 
     }
 
+    .cover-bg {
+        width : 150%;
+        // height: auto;
+    }
 }

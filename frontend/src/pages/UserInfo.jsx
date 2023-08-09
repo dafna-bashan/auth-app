@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadUser } from '../store/actions/userActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
+import topImgBg from '../assets/img/m2.png'
 
 export function UserInfo() {
 
@@ -30,6 +31,7 @@ export function UserInfo() {
     return (
         <React.Fragment>
             <NavBar />
+            <img className="cover-bg" src={topImgBg} alt="" />
             <div className="user-info">
                 <div className="center">
                     <div className="title">Personal info</div>
@@ -43,16 +45,9 @@ export function UserInfo() {
                             <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
                             <div className="name">{firstName} {lastName}</div>
                         </div>
+                        {/* <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#3f51b5",}} /></Link> */}
                         <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#b8b8b8",}} /></Link>
                     </div>
-                    {/* <div className="field img-con">
-                        <div>PHOTO</div>
-                        <img src={imgUrl ? imgUrl : userImg} alt="userImg" />
-                    </div>
-                    <div className="field">
-                        <div>NAME</div>
-                        <div>{firstName} {lastName}</div>
-                    </div> */}
                 </div>
                 <div className="frame">
                     <div className="field">
