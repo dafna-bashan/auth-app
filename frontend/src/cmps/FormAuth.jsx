@@ -54,6 +54,13 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
             setIsChangePass(true);
         } else {
             setIsChangePass(false);
+        }
+    }
+
+    useEffect(() => {
+        if (isChangePass) {
+            setIsFormValid(false)
+        } else {
             setCredentials(prevCredentials => ({
                 ...prevCredentials,
                 password: '',
@@ -65,8 +72,9 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                 newPassword: '',
             }));
             setIsPasswordVisible({ password: false, newPassword: false })
+            isButtonDisabled()
         }
-    }
+    }, [isChangePass])
 
     function handleChange({ target }) {
         const { name, value } = target;
@@ -81,7 +89,11 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
         console.log(credentials);
         isButtonDisabled()
         // validate(credentials)
-    }, [credentials.firstName, credentials.lastName, credentials.email, credentials.phone, credentials.password, credentials.newPassword])
+    }, [errors.firstName, errors.lastName, errors.email, errors.phone, errors.password, errors.newPassword])
+
+    useEffect(() => {
+        console.log(isFormValid);
+    }, [isFormValid])
 
     const onSubmit = (ev) => {
         ev.preventDefault()
@@ -167,7 +179,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
             default:
                 break;
         }
-        isButtonDisabled()
+        // isButtonDisabled()
         console.log(errors);
     }
 
@@ -185,9 +197,16 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
     }
 
     function isButtonDisabled() {
-        if (errors.firstName || errors.lastName || errors.email || errors.phone || errors.password || errors.newPassword) {
+        if (errors.firstName || errors.lastName || errors.email || errors.phone || errors.password || errors.newPassword
+            || (type === 'login' || type === 'signup') && (!credentials.email || !credentials.password) ||
+            ((type === 'signup' || type === 'profile-edit') && (!credentials.firstName || !credentials.lastName)) ||
+            (isChangePass && (!credentials.password || !credentials.newPassword))) {
+            console.log('isvalid', false);
             setIsFormValid(false)
-        } else setIsFormValid(true)
+        } else {
+            console.log('isvalid', true);
+            setIsFormValid(true)
+        }
     }
 
     function onPressEnter(ev) {
@@ -284,8 +303,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                                 <span className="count password">{password?.length | 0} / 20</span>
                             </div>
                         </div>
-                        {/* {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>} */}
-                        {/* <span onClick={() => togglePassVisibility("password")}>toggle</span> */}
+                        {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>}
                         <input type={isPasswordVisible.password ? "text" : "password"} name="password" id="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                         <div className="error-con">
                             {/* <div name="password" component="div" className="error" /> */}
