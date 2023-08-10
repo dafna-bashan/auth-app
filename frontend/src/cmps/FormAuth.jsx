@@ -227,22 +227,18 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                     <React.Fragment>
                         <div className="label-count flex space-between">
                             <label htmlFor="firstName">* First Name</label>
-                            {/* {type === 'profile-edit' && <label htmlFor="firstName">* First Name</label>} */}
                             <span className="count">{firstName.length} / 50</span>
                         </div>
                         <input type="text" name="firstName" id="firstName" maxLength="50" value={firstName} onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                         <div className="error-con">
-                            {/* <div name="firstName" component="div" className="error">{errors.firstName}</div> */}
                             {errors.firstName}
                         </div>
                         <div className="label-count flex space-between">
                             <label htmlFor="lastName">* Last Name</label>
                             <span className="count">{lastName.length} / 50</span>
                         </div>
-                        {/* {type === 'profile-edit' && <label htmlFor="lastName">* Last Name</label>} */}
                         <input type="text" name="lastName" id="lastName" maxLength="50" value={lastName} onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                         <div className="error-con">
-                            {/* <div name="lastName" component="div" className="error">{errors.lastName}</div> */}
                             {errors.lastName}
                         </div>
                     </React.Fragment>
@@ -255,7 +251,6 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                         </div>
                         <input type="email" name="email" id="email" onKeyDown={onEnterPass} maxLength="50" onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                         <div className="error-con">
-                            {/* <div name="email" component="div" className="error" /> */}
                             {errors.email}
                         </div>
                     </React.Fragment>}
@@ -267,7 +262,6 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                         </div>
                         <input type="tel" name="phone" id="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} onChange={handleChange} />
                         <div className="error-con">
-                            {/* <div name="phone" component="div" className="error" /> */}
                             {errors.phone}
                         </div>
                         <label htmlFor="address">Address</label>
@@ -291,7 +285,6 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                             <span className="count bio">{bio.length} / 200</span>
                         </div>
                         <textarea name="bio" id="bio" cols="30" rows="5" maxLength="200" value={bio} onChange={handleChange} />
-                        {/* <textarea name="bio" id="bio" cols="30" rows="5" placeholder="Enter your bio"></textarea> */}
                     </React.Fragment>}
                 {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
                 {type !== 'profile-edit' | isChangePass ?
@@ -303,10 +296,8 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                                 <span className="count password">{password?.length | 0} / 20</span>
                             </div>
                         </div>
-                        {isChangePass && <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>}
                         <input type={isPasswordVisible.password ? "text" : "password"} name="password" id="password" minLength="8" maxLength="20" onKeyDown={onEnterPass} onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                         <div className="error-con">
-                            {/* <div name="password" component="div" className="error" /> */}
                             {errors.password}
                         </div>
                     </React.Fragment> : null}
@@ -318,10 +309,8 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                             <span className="count password">{newPassword?.length | 0} / 20</span>
                         </div>
                     </div>
-                    {/* <span onClick={() => togglePassVisibility("newPassword")}>toggle</span> */}
                     <input type={isPasswordVisible.newPassword ? "text" : "password"} name="newPassword" id="newPassword" minLength="8" maxLength="20" onKeyDown={onEnterPass} onChange={handleChange} onBlur={(ev) => validate(ev.target)} />
                     <div className="error-con">
-                        {/* <div name="newPassword" component="div" className="error" /> */}
                         {errors.newPassword}
                     </div>
                 </React.Fragment>}

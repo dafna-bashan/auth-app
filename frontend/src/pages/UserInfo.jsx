@@ -46,7 +46,8 @@ export function UserInfo() {
                             <div className="name">{firstName} {lastName}</div>
                         </div>
                         {/* <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#3f51b5",}} /></Link> */}
-                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#b8b8b8",}} /></Link>
+                        {/* <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#b8b8b8",}} /></Link> */}
+                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#4F4F4F",}} /></Link>
                     </div>
                 </div>
                 <div className="frame">

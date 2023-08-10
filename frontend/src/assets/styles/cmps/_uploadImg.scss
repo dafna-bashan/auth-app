@@ -3,11 +3,22 @@
 
 
     .upload {
-        width       : 72px;
-        height      : 72px;
-        margin-right: 27px;
-        border-radius: 72px;
+        width           : 72px;
+        height          : 72px;
+        margin-right    : 27px;
+        border-radius   : 72px;
         background-color: #fff;
     }
+
+    .img-label {
+        // color: #828282;
+        color    : #4F4F4F;
+        font-size: 13px;
+
+        &.click {
+            cursor: pointer;
+        }
+    }
+
 
 }

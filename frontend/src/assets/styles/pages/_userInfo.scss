@@ -52,6 +52,7 @@
             height          : 150px;
             // margin       : 15px 0;
             border-radius   : 150px;
+            background-color: white;
         }
 
         a {
@@ -122,18 +123,18 @@
 }
 
 .frame {
-    border               : 1px solid #E0E0E0;
-    border-radius        : 12px;
-    width                : 845px;
-      background-color: #f9f9f9;
+    border                  : 1px solid #E0E0E0;
+    border-radius           : 12px;
+    width                   : 845px;
+    background-color        : #f9f9f9;
     // background-color     : #fff;
 }
 
 
 @media (max-width: $narrow-breakpoint) {
     .frame {
-        border: none;
-        width : 100vw;
+        border          : none;
+        width           : 100vw;
         background-color: transparent;
     }
 
@@ -153,6 +154,8 @@
             div:first-child {
                 width      : 100px;
                 margin-left: 23px;
+                color      : rgb(79, 79, 79);
+
             }
 
             :last-child {
