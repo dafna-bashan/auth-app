@@ -1227,3 +1227,5 @@
 8/10/2023, 9:49:44 AM - INFO - Server is running on port: 3030 
 8/10/2023, 10:23:50 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla vx","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 
 8/10/2023, 10:56:35 AM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla vx","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":""} 
+8/10/2023, 12:26:34 PM - INFO - Server is running on port: 3030 
+8/10/2023, 12:26:53 PM - INFO - Server is running on port: 3030 
