@@ -1238,3 +1238,5 @@
 8/10/2023, 2:24:24 PM - DEBUG - update user {"_id":"64d4c8d53087e479244f118f","email":"rachel@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"","phone":"","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1691666657/11_byp5ml.png","address":"","password":"","newPassword":""} 
 8/10/2023, 2:41:09 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla vx","phone":"0525000000","imgUrl":"","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":"","password":""} 
 8/10/2023, 2:41:24 PM - DEBUG - update user {"_id":"64cb6826704b9114ec38db8e","email":"dafnaba123@gmail.com","firstName":"Dafna","lastName":"Bashan","bio":"bla bla vx","phone":"0525000000","imgUrl":"https://res.cloudinary.com/depjjubya/image/upload/v1691667680/istockphoto-966368538-170667a_cc1rgi.jpg","address":"Arlozorov St, Tel Aviv-Yafo, Israel","newPassword":"","password":""} 
+8/10/2023, 3:04:08 PM - INFO - Server is running on port: 3030 
+8/10/2023, 3:04:23 PM - INFO - Server is running on port: 3030 
