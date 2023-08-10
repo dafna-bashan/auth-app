@@ -1259,3 +1259,6 @@
 8/10/2023, 3:45:10 PM - ERROR - Failed to get user | TypeError: Cannot convert undefined or null to object 
 8/10/2023, 3:46:10 PM - ERROR - while finding user 64cb6826704b9114ec38db8e | TypeError: Cannot convert undefined or null to object 
 8/10/2023, 3:46:10 PM - ERROR - Failed to get user | TypeError: Cannot convert undefined or null to object 
+8/10/2023, 3:48:27 PM - INFO - Server is running on port: 3030 
+8/10/2023, 3:48:51 PM - INFO - Server is running on port: 3030 
+8/10/2023, 3:48:57 PM - INFO - Server is running on port: 3030 
