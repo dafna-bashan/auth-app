@@ -162,9 +162,11 @@
                 margin-right: 23px;
             }
 
-            &.bio {
+            &.long {
                 flex-direction: column;
                 align-items   : flex-start;
+                padding      : 28px 0;
+                height        : auto;
 
                 :first-child {
                     margin-bottom: 5px;
