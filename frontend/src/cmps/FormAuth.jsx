@@ -64,6 +64,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                 password: '',
                 newPassword: '',
             }));
+            setIsPasswordVisible({ password: false, newPassword: false })
         }
     }
 
@@ -78,7 +79,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
 
     useEffect(() => {
         console.log(credentials);
-        if (type === 'profile-edit') isButtonDisabled()
+        isButtonDisabled()
         // validate(credentials)
     }, [credentials.firstName, credentials.lastName, credentials.email, credentials.phone, credentials.password, credentials.newPassword])
 
