@@ -15,9 +15,9 @@ export function SignUp() {
     }
 
     useEffect(() => {
-        console.log(loggedInUser)
+        // console.log(loggedInUser)
         if (loggedInUser?._id) {
-            console.log('signed in!');
+            // console.log('signed in!');
             navigate('/user')
         }
     }, [loggedInUser, navigate])

@@ -24,6 +24,12 @@ export function UserInfo() {
         else dispatch({ type: 'RESTART' })
     }, [loggedInUser, navigate])
 
+    function getBioClassname() {
+        if (bio.length > 70) return "field long-bio"
+        var BioClassname = "field"
+        if (bio.length > 40) BioClassname = "field long"
+        return BioClassname
+    }
 
     if (!loggedInUser?._id) return <div></div>
 
@@ -63,7 +69,7 @@ export function UserInfo() {
                         <div>ADDRESS</div>
                         <div>{address}</div>
                     </div>
-                    <div className={bio?.length > 35 ? "field long" : "field"}>
+                    <div className={getBioClassname()}>
                         <div>BIO</div>
                         <div>{bio}</div>
                     </div>

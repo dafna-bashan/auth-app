@@ -61,11 +61,10 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
         if (isChangePass) {
             setIsFormValid(false)
         } else {
-            setCredentials(prevCredentials => ({
-                ...prevCredentials,
-                password: '',
-                newPassword: '',
-            }));
+            const data = credentials
+            delete data.password
+            delete data.newPassword
+            setCredentials(data)
             setErrors(prevErrors => ({
                 ...prevErrors,
                 password: '',
@@ -211,7 +210,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
     }
 
     function onPressEnter(ev) {
-        if ((ev.charCode || ev.keyCode) === 13) {
+        if (type === 'profile-edit' && (ev.charCode || ev.keyCode) === 13) {
             ev.preventDefault();
         }
     }
@@ -276,7 +275,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                         <Autocomplete id="address" apiKey="AIzaSyDVtYUw2ARdt5BTtFCdWRFRNyrlFtGvYC8" name="address"
                             onPlaceSelected={(place) => {
                                 // console.log(place);
-                                setCredentials({ ...credentials, address: place.formatted_address })
+                                setCredentials(prevCredentials => ({ ...prevCredentials, address: place.formatted_address }))
                             }}
                             // defaultValue={address}
                             value={address}

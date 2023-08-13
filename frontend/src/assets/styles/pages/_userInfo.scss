@@ -80,7 +80,8 @@
             //     white-space  : nowrap;
             //     overflow     : hidden;
             //     text-overflow: ellipsis;
-            max-width: 500px;
+            max-width : 500px;
+            // text-align: right;
         }
 
         &.bio {
@@ -89,6 +90,9 @@
             padding   : 15px 0;
         }
 
+        &.long-bio {
+            margin: 20px 0;
+        }
 
     }
 
@@ -162,10 +166,12 @@
                 margin-right: 23px;
             }
 
-            &.long {
+            &.long,
+            &.long-bio {
                 flex-direction: column;
                 align-items   : flex-start;
-                padding      : 28px 0;
+                padding       : 28px 0;
+                margin        : 0;
                 height        : auto;
 
                 :first-child {
@@ -174,9 +180,13 @@
 
                 :last-child {
                     margin-left: 23px;
+                    // text-align : unset;
+
                 }
             }
         }
+
+
 
         .profile-container {
             div:first-child {

@@ -7,7 +7,7 @@ export function UserManu({ closeFunc }) {
     const dispatch = useDispatch()
 
     const onLogout = () => {
-        console.log('logout')
+        // console.log('logout')
         dispatch(logout())
     }
 

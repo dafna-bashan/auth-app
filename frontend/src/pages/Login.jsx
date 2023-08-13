@@ -15,9 +15,9 @@ export function Login() {
     }
 
     useEffect(() => {
-        console.log(loggedInUser)
+        // console.log(loggedInUser)
         if (loggedInUser?._id) {
-            console.log('logged in!');
+            // console.log('logged in!');
             navigate('/user')
         }
     }, [loggedInUser, navigate])

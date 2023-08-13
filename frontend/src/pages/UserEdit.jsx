@@ -28,7 +28,7 @@ export function UserEdit() {
     function onUpdateUser(updatedInfo) {
         // ev.preventDefault()
         const updatedUser = { ...user, ...updatedInfo }
-        console.log('updated!', updatedUser);
+        // console.log('updated!', updatedUser);
         dispatch(updateUser(updatedUser))
     }
 
