@@ -112,18 +112,27 @@
 
 }
 
+
 .svg-inline--fa {
     &.eye {
-        position: relative;
-        right   : 25px;
-        top     : 36px;
+        position   : relative;
+        right      : 25px;
+        top        : 36px;
         // width   : fit-content;
+    }
+
+    &.remove {
+        position        : relative;
+        right           : 13px;
+        top             : 37px;
+        background-color: #fff;
     }
 
 }
 
-svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
-    overflow: unset;
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+    overflow  : unset;
     box-sizing: border-box;
 }
 

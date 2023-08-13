@@ -47,7 +47,7 @@ export function UserInfo() {
                         </div>
                         {/* <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#3f51b5",}} /></Link> */}
                         {/* <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{color: "#b8b8b8",}} /></Link> */}
-                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{ color: "#4F4F4F", }} /></Link>
+                        <Link to="/user/edit" className="edit"><FontAwesomeIcon icon={faPenToSquare} size="xl" style={{ color: "#4F4F4F" }} /></Link>
                     </div>
                 </div>
                 <div className="frame">
@@ -59,11 +59,11 @@ export function UserInfo() {
                         <div>PHONE</div>
                         <div>{phone}</div>
                     </div>
-                    <div className={address.length > 35 ? "field long" : "field"}>
+                    <div className={address?.length > 35 ? "field long" : "field"}>
                         <div>ADDRESS</div>
                         <div>{address}</div>
                     </div>
-                    <div className={bio.length > 35 ? "field long" : "field"}>
+                    <div className={bio?.length > 35 ? "field long" : "field"}>
                         <div>BIO</div>
                         <div>{bio}</div>
                     </div>

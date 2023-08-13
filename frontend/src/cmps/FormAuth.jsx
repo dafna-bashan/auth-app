@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './Loader';
 import Checkbox from '@mui/joy/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import Autocomplete from "react-google-autocomplete";
 import bgcImg from '../assets/img/m1.png'
 
@@ -71,6 +71,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                 password: '',
                 newPassword: '',
             }));
+            dispatch({ type: 'REMOVE_ERROR' })
             setIsPasswordVisible({ password: false, newPassword: false })
             isButtonDisabled()
         }
@@ -91,9 +92,9 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
         // validate(credentials)
     }, [errors.firstName, errors.lastName, errors.email, errors.phone, errors.password, errors.newPassword])
 
-    useEffect(() => {
-        console.log(isFormValid);
-    }, [isFormValid])
+    // useEffect(() => {
+    //     console.log(isFormValid);
+    // }, [isFormValid])
 
     const onSubmit = (ev) => {
         ev.preventDefault()
@@ -180,7 +181,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                 break;
         }
         // isButtonDisabled()
-        console.log(errors);
+        // console.log(errors);
     }
 
 
@@ -201,10 +202,10 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
             || (type === 'login' || type === 'signup') && (!credentials.email || !credentials.password) ||
             ((type === 'signup' || type === 'profile-edit') && (!credentials.firstName || !credentials.lastName)) ||
             (isChangePass && (!credentials.password || !credentials.newPassword))) {
-            console.log('isvalid', false);
+            // console.log('isvalid', false);
             setIsFormValid(false)
         } else {
-            console.log('isvalid', true);
+            // console.log('isvalid', true);
             setIsFormValid(true)
         }
     }
@@ -260,16 +261,26 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                             <label htmlFor="phone">Phone</label>
                             <span className="count">{phone.length} / 10</span>
                         </div>
-                        <input type="tel" name="phone" id="phone" placeholder="05XXXXXXXX" maxLength="10" onInput={onEnterPhone} onChange={handleChange} />
+                        <input type="tel" name="phone" id="phone" placeholder="05XXXXXXXX" maxLength="10" value={phone} onInput={onEnterPhone} onChange={handleChange} />
                         <div className="error-con">
                             {errors.phone}
                         </div>
-                        <label htmlFor="address">Address</label>
+                        <div className="label-count flex space-between">
+                            <label htmlFor="address">Address</label>
+                            <FontAwesomeIcon className="remove" icon={faCircleXmark} style={{ color: "#4F4F4F" }}
+                                onClick={() => {
+                                    console.log('clicked');
+                                    setCredentials(prevCredentials => ({ ...prevCredentials, address: '' }))
+                                }} />
+                        </div>
                         <Autocomplete id="address" apiKey="AIzaSyDVtYUw2ARdt5BTtFCdWRFRNyrlFtGvYC8" name="address"
                             onPlaceSelected={(place) => {
-                                console.log(place);
+                                // console.log(place);
                                 setCredentials({ ...credentials, address: place.formatted_address })
-                            }} defaultValue={address}
+                            }}
+                            // defaultValue={address}
+                            value={address}
+                            onChange={handleChange}
                             style={{ 'marginBottom': 24 }}
                             options={{
                                 // types: ["(regions)"],
@@ -286,13 +297,13 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                         </div>
                         <textarea name="bio" id="bio" cols="30" rows="5" maxLength="200" value={bio} onChange={handleChange} />
                     </React.Fragment>}
-                {type === 'profile-edit' && <Checkbox label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
+                {type === 'profile-edit' && <Checkbox className="checkbox" label="Change password?" size="md" variant="outlined" style={{ 'marginBottom': 24 }} onChange={toggleChangePass} />}
                 {type !== 'profile-edit' | isChangePass ?
                     <React.Fragment>
                         <div className="label-count flex space-between">
                             <label htmlFor="password">{type === 'profile-edit' ? '* Current password' : '* Password'}</label>
                             <div>
-                                <FontAwesomeIcon className="eye" icon={isPasswordVisible.password ? faEye : faEyeSlash} onClick={() => togglePassVisibility("password")} />
+                                <FontAwesomeIcon className="eye" icon={isPasswordVisible.password ? faEye : faEyeSlash} style={{ color: "#4F4F4F" }} onClick={() => togglePassVisibility("password")} />
                                 <span className="count password">{password?.length | 0} / 20</span>
                             </div>
                         </div>
@@ -305,7 +316,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                     <div className="label-count flex space-between">
                         <label htmlFor="newPassword">* New password</label>
                         <div>
-                            <FontAwesomeIcon className="eye" icon={isPasswordVisible.newPassword ? faEye : faEyeSlash} onClick={() => togglePassVisibility("newPassword")} />
+                            <FontAwesomeIcon className="eye" icon={isPasswordVisible.newPassword ? faEye : faEyeSlash} style={{ color: "#4F4F4F" }} onClick={() => togglePassVisibility("newPassword")} />
                             <span className="count password">{newPassword?.length | 0} / 20</span>
                         </div>
                     </div>
