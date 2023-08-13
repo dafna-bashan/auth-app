@@ -141,3 +141,5 @@
 8/13/2023, 12:03:37 PM - DEBUG - update user {"_id":"64d89a401cc57583d25aa6d3","email":"dafna@gmail.com","firstName":"דפנה","lastName":"בשן","bio":"gdgd dgdsg gfdk fmkslfm fm","phone":"0547777777","imgUrl":"","address":"Tel Aviv St, Haifa, Israel"} 
 8/13/2023, 12:09:30 PM - INFO - Server is running on port: 3030 
 8/13/2023, 12:09:42 PM - INFO - Server is running on port: 3030 
+8/13/2023, 12:59:10 PM - ERROR - while finding user 64d874bb92bced003502b931 | TypeError: Cannot convert undefined or null to object 
+8/13/2023, 12:59:10 PM - ERROR - Failed to get user | TypeError: Cannot convert undefined or null to object 

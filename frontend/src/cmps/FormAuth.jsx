@@ -171,7 +171,7 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                 }
                 break;
             case 'phone':
-                if (values.value && !/^05[2-9]\d{7}$/.test(values.value)) {
+                if (values.value && !/^05[0-9]\d{7}$/.test(values.value)) {
                     setErrors(prevErrors => ({ ...prevErrors, phone: 'Please enter a valid israeli mobile phone number, use only digits' }))
                 } else {
                     setErrors(prevErrors => ({ ...prevErrors, phone: '' }))
