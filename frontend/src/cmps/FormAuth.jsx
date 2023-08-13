@@ -282,8 +282,8 @@ export function FormAuth({ type, title, btnTxt, submitFunc, bottomLine, user }) 
                             onChange={handleChange}
                             style={{ 'marginBottom': 24 }}
                             options={{
-                                // types: ["(regions)"],
-                                types: ["address"],
+                                types: [],
+                                // types: ["address", "(cities)", "(regions)"],
                                 // componentRestrictions: { country: "ru" },
                             }}
                             language="en"
