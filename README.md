@@ -7,8 +7,6 @@ An End-To-End authentication app designed to simplify web app development. Built
 - [Installation](#installation)
 - [Architecture](#architecture)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
