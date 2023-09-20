@@ -2,11 +2,14 @@
 
 An End-To-End authentication app designed to simplify web app development. Built with React and Redux for the Frontend, powered by Node.js and Express on the Backend, and leveraging MongoDB for data storage. This app provides a reusable authentication solution, enabling users to update and manage their profiles easily.
 
+![App Screenshot](https://i.ibb.co/7StyqfJ/Screen-Shot-2023-09-20-at-15-39-49.png)
+
 ## Table of Contents
 
 - [Installation](#installation)
 - [Architecture](#architecture)
 - [Usage](#usage)
+- [Screenshots](#screenshots)
 
 ## Installation
 
@@ -71,3 +74,11 @@ The Authentication App is designed with a modular and scalable architecture. Her
    - User login and authentication.
    - User profile management, including updating user information and passwords.
    - Logout functionality.
+  
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/QHTyZjx/Screen-Shot-2023-09-20-at-15-39-38.png)
+
+![App Screenshot](https://i.ibb.co/TwjdGqc/Screen-Shot-2023-09-20-at-15-39-28.png)
+
+![App Screenshot](https://i.ibb.co/d0R0D38/Screen-Shot-2023-09-20-at-15-39-01.png)
